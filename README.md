@@ -1,16 +1,24 @@
-# soochit
+# Soochit 👩‍⚕️
 
-A new Flutter project.
+Not just another medicine reminder.
 
-## Getting Started
+## Problem Statement
+* It's hard for people to keep a physical folder for their medical prescription history.
+* People (like us) are lazy enough to procrastinate setting medicine reminders primarily because they have to do the hard task of manually labelling the reminder, setting the time, and setting the frequency of the medicines.
 
-This project is a starting point for a Flutter application.
+## Solution
 
-A few resources to get you started if this is your first Flutter project:
+Soochit: a fullly automated e-prescription tracker and medicine reminder.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+* The doctor will write digital prescriptions on our app which will be saved on user's profile.
+* We will send out automatical reminders for the patients to take their medicines (entirely based off what is written in the prescription.) 
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Use Cases
+
+* Patients won't have to set reminders manually. Hence, there is no way for them to procrastinate.
+* Patients won't have to keep a physical binder to maintain their medical history.
+* Patients won't have to confuse themselves by reading the (mostly incomprehensible) handwriting of the doctor once they forget their medicines, dosage, or timings.
+
+## Unique Selling Point (USP)
+it is a medicine reminder app, but you don't have to set reminders for your medicines. 😉
+
