@@ -8,7 +8,7 @@ class MyColors {
 
   //shades of pink
   static const Color lightPink = Color(0xFFF6B0B3);
-  static const Color lighterPink =  Color(0xFFD69593);
+  static const Color lighterPink =  Color(0xFFFCBEC1);
   static const Color lightestPink = Color(0xFFFDECED);
 
 }
