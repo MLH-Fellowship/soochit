@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:soochit/pages/authentication/splash_page.dart';
+import 'package:soochit/stores/login_store.dart';
 import 'pages/welcome.dart';
 import 'pages/splash.dart';
 import 'pages/login.dart';
@@ -16,16 +19,23 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     // the main here will have a 'splash' as home-screen and other routes
-    return MaterialApp(
-      title: 'Soochit',
-      debugShowCheckedModeBanner: false,
-      // home: SplashPage(), //uncomment after auth works
-      initialRoute: Welcome.id,
-      routes: {
-        Welcome.id: (context) => Welcome(),
-        Splash.id: (context) => Splash(),
-        Login.id: (context) => Login(),
-      },
+    return MultiProvider(
+      providers: [
+        Provider<LoginStore>(
+          create: (_) => LoginStore(),
+        )
+      ],
+      child: MaterialApp(
+        title: 'Soochit',
+        debugShowCheckedModeBanner: false,
+        home: SplashPage(),
+        // initialRoute: Welcome.id,
+        routes: {
+          Welcome.id: (context) => Welcome(),
+          Splash.id: (context) => Splash(),
+          Login.id: (context) => Login(),
+        },
+      ),
     );
   }
 }

@@ -12,8 +12,9 @@ class MyDimens {
   static const double double_30 = 30;
   static const double double_40 = 40;
   static const double double_100 = 100;
-  static const double double_200 = 150;
-  static const double double_280 = 280;
+  static const double double_200 = 200;
+  static const double double_300 = 300;
+  static const double double_400 = 400;
   static const double double_600 = 600;
 
 }

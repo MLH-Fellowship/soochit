@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-#Fri Sep 25 11:47:16 IST 2020
+#Sat Sep 26 02:54:40 IST 2020
 base.0=/home/imperial_lord/soochit/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
-=======
-#Fri Sep 25 18:11:14 IST 2020
-base.0=/Users/rachitgupta/Documents/projects/soochit/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
->>>>>>> 90acea1fde02292a2494b32d6f6e9d36b37762db
 path.0=classes.dex
 renamed.0=classes.dex

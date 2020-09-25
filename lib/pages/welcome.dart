@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:soochit/global/myColors.dart';
 import 'package:soochit/global/mySpaces.dart';
@@ -51,11 +52,11 @@ class _WelcomeState extends State<Welcome> {
             ),
           ),
           Positioned(
-            bottom: MyDimens.double_200,
-            left: MyDimens.double_25,
-            right: MyDimens.double_25,
+            bottom: MyDimens.double_100,
+            left: MyDimens.double_10,
+            right: MyDimens.double_10,
             child: Container(
-              height: MyDimens.double_280,
+              height: MyDimens.double_300,
               width: double.infinity,
               margin: EdgeInsets.symmetric(horizontal:MyDimens.double_20),
               child: Card(
@@ -127,7 +128,7 @@ class _WelcomeState extends State<Welcome> {
                             InkWell(
                               child: Align(
                                 child: Icon(
-                                  Icons.check_circle, size: MyDimens.double_40,color: MyColors.primaryColor,
+                                  CupertinoIcons.check_mark_circled_solid, size: MyDimens.double_40,color: MyColors.primaryColor,
                                 ),
                                 alignment: Alignment.centerRight,
                               ),
