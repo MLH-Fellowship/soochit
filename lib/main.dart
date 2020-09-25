@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:soochit/pages/roleSelectionPage.dart';
+import 'pages/welcome.dart';
+import 'pages/splash.dart';
+import 'pages/login.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,7 +20,12 @@ class _MyAppState extends State<MyApp> {
       title: 'Soochit',
       debugShowCheckedModeBanner: false,
       // home: SplashPage(), //uncomment after auth works
-      home: RoleSelectionPage(),
+      initialRoute: Welcome.id,
+      routes: {
+        Welcome.id: (context) => Welcome(),
+        Splash.id: (context) => Splash(),
+        Login.id: (context) => Login(),
+      },
     );
   }
 }
