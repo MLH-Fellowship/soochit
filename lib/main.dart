@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'pages/welcome.dart';
 import 'pages/splash.dart';
 import 'pages/login.dart';
+import 'pages/doctor-specific/homeDoctor.dart';
+import 'pages/patient-specific/homePatient.dart';
+import 'pages/patient-specific/prescriptionHistory.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,12 +22,14 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Soochit',
       debugShowCheckedModeBanner: false,
-      // home: SplashPage(), //uncomment after auth works
-      initialRoute: Welcome.id,
+      initialRoute: PrescriptionHistory.id,
       routes: {
         Welcome.id: (context) => Welcome(),
         Splash.id: (context) => Splash(),
         Login.id: (context) => Login(),
+        HomeDoctor.id: (context) => HomeDoctor(),
+        HomePatient.id: (context) => HomePatient(),
+        PrescriptionHistory.id: (context) => PrescriptionHistory()
       },
     );
   }
