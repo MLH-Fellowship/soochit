@@ -24,12 +24,12 @@ class _WelcomeState extends State<Welcome> {
             child: Align(
               alignment: Alignment.topCenter,
               child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 100),
+                padding: EdgeInsets.symmetric(vertical: MyDimens.double_100),
                 child: Column(
                   children: [
                     Text(
                       MyStrings.welcomeToLabel,
-                      style: Theme.of(context).textTheme.headline4.copyWith(color: MyColors.lighterPink, fontFamily: 'airbnb'),
+                      style: Theme.of(context).textTheme.headline4.copyWith(color: MyColors.lighterPink, fontFamily: 'airbnb', fontSize: 30),
                     ),
                     Text(
                       MyStrings.appName,
@@ -51,14 +51,17 @@ class _WelcomeState extends State<Welcome> {
             ),
           ),
           Positioned(
-            bottom: MyDimens.double_100,
+            bottom: MyDimens.double_200,
             left: MyDimens.double_25,
             right: MyDimens.double_25,
             child: Container(
               height: MyDimens.double_280,
               width: double.infinity,
-              margin: EdgeInsets.symmetric(horizontal:MyDimens.double_10),
+              margin: EdgeInsets.symmetric(horizontal:MyDimens.double_20),
               child: Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(MyDimens.double_10)
+                ),
                 elevation: MyDimens.double_7,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: MyDimens.double_30),

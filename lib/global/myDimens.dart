@@ -1,6 +1,6 @@
 class MyDimens {
   //negative numbers
-  static const double double_negative_300 = -300;
+  static const double double_negative_300 = -250;
   static const double double_negative_200 = -200;
 
   //positive numbers
@@ -12,6 +12,7 @@ class MyDimens {
   static const double double_30 = 30;
   static const double double_40 = 40;
   static const double double_100 = 100;
+  static const double double_200 = 150;
   static const double double_280 = 280;
   static const double double_600 = 600;
 
