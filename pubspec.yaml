@@ -51,3 +51,5 @@ flutter:
       fonts:
         - asset: assets/fonts/LexendDeca-Regular.ttf
 
+  assets:
+    - assets/images/

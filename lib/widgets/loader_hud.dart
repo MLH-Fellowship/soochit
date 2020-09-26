@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:soochit/theme.dart';
+import 'package:soochit/global/myColors.dart';
+import 'package:soochit/global/myDimens.dart';
 
 class LoaderHUD extends StatelessWidget {
   final bool inAsyncCall;
   final double opacity;
   final Color color;
   final Widget progressIndicator = Container(
-    width: 200,
-    height: 100,
+    width: MyDimens.double_200,
+    height: MyDimens.double_100,
     decoration: BoxDecoration(
-      borderRadius: const BorderRadius.all(Radius.circular(8)),
+      borderRadius: BorderRadius.all(Radius.circular(MyDimens.double_4)),
       color: MyColors.primaryColor.withOpacity(0.6),
     ),
     child: const Center(child: CircularProgressIndicator()),
@@ -21,7 +22,7 @@ class LoaderHUD extends StatelessWidget {
     Key key,
     @required this.inAsyncCall,
     this.opacity = 0.3,
-    this.color = Colors.grey,
+    this.color = MyColors.lightestPink,
     this.dismissible = false,
     @required this.child,
   })  : assert(child != null),

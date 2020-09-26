@@ -9,6 +9,6 @@ class MySpaces {
 
   //horizontal gaps
   static const Widget hGapInBetween = SizedBox(width: 12);
-  static const Widget hSmallGapInBetween = SizedBox(height: 20);
+  static const Widget hSmallGapInBetween = SizedBox(width: 20);
   static const Widget hMediumGapInBetween = SizedBox(width: 30);
 }

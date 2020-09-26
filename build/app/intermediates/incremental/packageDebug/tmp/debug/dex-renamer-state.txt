@@ -1,4 +1,4 @@
-#Sat Sep 26 02:54:40 IST 2020
+#Sat Sep 26 05:29:24 IST 2020
 base.0=/home/imperial_lord/soochit/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

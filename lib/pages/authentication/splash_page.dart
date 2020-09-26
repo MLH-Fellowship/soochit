@@ -5,7 +5,7 @@ import 'package:soochit/pages/authentication/login_page.dart';
 import 'package:soochit/stores/login_store.dart';
 
 class SplashPage extends StatefulWidget {
-  const SplashPage({Key key}) : super(key: key);
+  SplashPage({Key key}) : super(key: key);
   @override
   _SplashPageState createState() => _SplashPageState();
 }
@@ -17,9 +17,9 @@ class _SplashPageState extends State<SplashPage> {
     super.initState();
     Provider.of<LoginStore>(context, listen: false).isAlreadyAuthenticated().then((result) {
       if (result) {
-        Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (_) => const HomePage()), (Route<dynamic> route) => false);
+        Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (_) =>  HomePage()), (Route<dynamic> route) => false);
       } else {
-        Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (_) => const LoginPage()), (Route<dynamic> route) => false);
+        Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (_) =>  LoginPage()), (Route<dynamic> route) => false);
       }
     });
   }

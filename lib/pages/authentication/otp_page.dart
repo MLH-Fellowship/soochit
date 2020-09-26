@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:numeric_keyboard/numeric_keyboard.dart';
 import 'package:provider/provider.dart';
+import 'package:soochit/global/myDimens.dart';
+import 'package:soochit/global/mySpaces.dart';
+import 'package:soochit/global/myStrings.dart';
 import 'package:soochit/stores/login_store.dart';
-import 'package:soochit/theme.dart';
 import 'package:soochit/widgets/loader_hud.dart';
+import 'package:soochit/global/myColors.dart';
 
 class OtpPage extends StatefulWidget {
-  const OtpPage({Key key}) : super(key: key);
+  OtpPage({Key key}) : super(key: key);
 
   @override
   _OtpPageState createState() => _OtpPageState();
@@ -25,29 +28,29 @@ class _OtpPageState extends State<OtpPage> {
   Widget otpNumberWidget(int position) {
     try {
       return Container(
-        height: 35,
-        width: 35,
+        height: MyDimens.double_40,
+        width: MyDimens.double_40,
         decoration: BoxDecoration(
-            color: Colors.white,
-            border: Border.all(color: Colors.white),
-            borderRadius: const BorderRadius.all(Radius.circular(7))),
+            color: MyColors.lightPink,
+            border: Border.all(color: MyColors.lighterPink),
+            borderRadius: BorderRadius.all(Radius.circular(MyDimens.double_4))),
         child: Center(
             child: Text(
-              text[position],
-              style: const TextStyle(
-                  color: Color(0xFF4B4B4B),
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600),
-            )),
+          text[position],
+          style: Theme.of(context)
+              .textTheme
+              .headline6
+              .copyWith(color: MyColors.lightestPink, fontFamily: 'lexenddeca'),
+        )),
       );
     } catch (e) {
       return Container(
-        height: 35,
-        width: 35,
+        height: MyDimens.double_40,
+        width: MyDimens.double_40,
         decoration: BoxDecoration(
-            color: Colors.white,
-            border: Border.all(color: Colors.white),
-            borderRadius: const BorderRadius.all(Radius.circular(7))),
+            color: MyColors.lightPink,
+            border: Border.all(color: MyColors.lighterPink),
+            borderRadius: BorderRadius.all(Radius.circular(MyDimens.double_4))),
       );
     }
   }
@@ -60,26 +63,27 @@ class _OtpPageState extends State<OtpPage> {
           builder: (_) => LoaderHUD(
             inAsyncCall: loginStore.isOtpLoading,
             child: Scaffold(
-              backgroundColor: Colors.grey[200],
+              backgroundColor: MyColors.primaryColor,
               key: loginStore.otpScaffoldKey,
               appBar: AppBar(
                 leading: IconButton(
                   icon: Container(
-                    padding: const EdgeInsets.all(10),
+                    padding: EdgeInsets.all(MyDimens.double_10),
                     decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.all(Radius.circular(20)),
-                      color: MyColors.primaryColorLight.withAlpha(20),
+                      borderRadius:
+                          BorderRadius.all(Radius.circular(MyDimens.double_20)),
+                      color: MyColors.lightestPink,
                     ),
                     child: Icon(
                       Icons.arrow_back_ios,
                       color: MyColors.primaryColor,
-                      size: 16,
+                      size: MyDimens.double_20,
                     ),
                   ),
                   onPressed: () => Navigator.of(context).pop(),
                 ),
                 elevation: 0,
-                backgroundColor: Colors.grey[200],
+                backgroundColor: MyColors.primaryColor,
                 brightness: Brightness.light,
               ),
               body: SafeArea(
@@ -92,99 +96,120 @@ class _OtpPageState extends State<OtpPage> {
                         mainAxisSize: MainAxisSize.max,
                         children: <Widget>[
                           Expanded(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: <Widget>[
-                                Container(
-                                  margin: const EdgeInsets.only(
-                                    left: 30,
-                                    right: 30,
-                                  ),
-                                  child: Column(
-                                    // ignore: prefer_const_literals_to_create_immutables
-                                    children: <Widget>[
-                                      // ignore: prefer_const_literals_to_create_immutables, prefer_const_literals_to_create_immutables
-                                      const Align(
-                                        alignment: Alignment.centerLeft,
-                                        child: Text(
-                                          'Welcome!',
-                                          style: TextStyle(
-                                            fontSize: 29,
-                                            fontWeight: FontWeight.w700,
-                                            color: Color(0xFF08134D),
+                            child: SingleChildScrollView(
+                              child: Column(
+                                children: <Widget>[
+                                  Container(
+                                    margin: EdgeInsets.only(
+                                      top: MyDimens.double_20,
+                                      left: MyDimens.double_20,
+                                      right: MyDimens.double_20,
+                                      bottom: MyDimens.double_20,
+                                    ),
+                                    child: Column(
+                                      // ignore: prefer_const_literals_to_create_immutables
+                                      children: <Widget>[
+                                        // ignore: prefer_const_literals_to_create_immutables, prefer_const_literals_to_create_immutables
+                                        Align(
+                                          alignment: Alignment.centerLeft,
+                                          child: Text(
+                                            MyStrings.welcomeToLabel,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .headline4
+                                                .copyWith(
+                                                    color: MyColors.lighterPink,
+                                                    fontFamily: 'airbnb',
+                                                    fontSize: 30),
                                           ),
                                         ),
-                                      ),
-                                      const Align(
-                                        alignment: Alignment.centerLeft,
-                                        child: Text(
-                                          'Enter your OTP number',
-                                          style: TextStyle(
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.w600,
-                                            color: Color(0xFF8F8F8F),
-                                          ),
+                                        Align(
+                                          alignment: Alignment.centerLeft,
+                                          child: Text(MyStrings.appName,
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .headline3
+                                                  .copyWith(
+                                                      color: MyColors.white,
+                                                      fontFamily: 'airbnb')),
                                         ),
-                                      )
-                                    ],
+                                        MySpaces.vSmallGapInBetween,
+                                        Align(
+                                          alignment: Alignment.centerLeft,
+                                          child: Text(MyStrings.otpRequest,
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .bodyText2
+                                                  .copyWith(
+                                                  color: MyColors.white,
+                                                  fontFamily: 'lexenddeca')),
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                Container(
-                                  constraints:
-                                  const BoxConstraints(maxWidth: 500),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                    crossAxisAlignment:
-                                    CrossAxisAlignment.center,
-                                    children: <Widget>[
-                                      otpNumberWidget(0),
-                                      otpNumberWidget(1),
-                                      otpNumberWidget(2),
-                                      otpNumberWidget(3),
-                                      otpNumberWidget(4),
-                                      otpNumberWidget(5),
-                                    ],
+
+                                  Container(
+                                    constraints: BoxConstraints(maxWidth: MyDimens.double_600),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: <Widget>[
+                                        otpNumberWidget(0),
+                                        otpNumberWidget(1),
+                                        otpNumberWidget(2),
+                                        otpNumberWidget(3),
+                                        otpNumberWidget(4),
+                                        otpNumberWidget(5),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.symmetric(
+                                horizontal: MyDimens.double_20, vertical: MyDimens.double_10),
+                            constraints: BoxConstraints(maxWidth: 500),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: OutlineButton(
+                                    onPressed: () {
+                                      loginStore.validateOtpAndLogin(context, text);
+                                    },
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(MyDimens.double_4)),
+                                    borderSide: BorderSide(
+                                        color: MyColors.lighterPink,
+                                        width: MyDimens.double_1),
+                                    color: MyColors.primaryColor,
+                                    child: Padding(
+                                      padding: EdgeInsets.only(
+                                          top: MyDimens.double_15,
+                                          bottom: MyDimens.double_15),
+                                      child: Text(MyStrings.buttonLabel1,
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .subtitle1
+                                              .copyWith(
+                                                  color: MyColors.lighterPink,
+                                                  fontFamily: 'lexenddeca')),
+                                    ),
                                   ),
                                 ),
                               ],
                             ),
                           ),
-                          Container(
-                            margin: const EdgeInsets.symmetric(
-                                horizontal: 20, vertical: 10),
-                            constraints: const BoxConstraints(maxWidth: 500),
-                            child: RaisedButton(
-                              onPressed: () {
-                                loginStore.validateOtpAndLogin(context, text);
-                              },
-                              color: MyColors.primaryColor,
-                              shape: const RoundedRectangleBorder(
-                                  borderRadius:
-                                  BorderRadius.all(Radius.circular(7))),
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 8, horizontal: 8),
-                                child: const Padding(
-                                  padding: EdgeInsets.only(
-                                      left: 60, right: 60, top: 10, bottom: 10),
-                                  child: Text(
-                                    'Confirm',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
                           NumericKeyboard(
                             onKeyboardTap: _onKeyboardTap,
-                            textColor: MyColors.primaryColorLight,
+                            textColor: MyColors.lightestPink,
                             rightIcon: Icon(
                               Icons.backspace,
-                              color: MyColors.primaryColorLight,
+                              color: MyColors.lightestPink,
                             ),
                             rightButtonFn: () {
                               setState(() {

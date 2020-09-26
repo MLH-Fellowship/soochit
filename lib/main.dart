@@ -25,16 +25,25 @@ class _MyAppState extends State<MyApp> {
           create: (_) => LoginStore(),
         )
       ],
-      child: MaterialApp(
-        title: 'Soochit',
-        debugShowCheckedModeBanner: false,
-        home: SplashPage(),
-        // initialRoute: Welcome.id,
-        routes: {
-          Welcome.id: (context) => Welcome(),
-          Splash.id: (context) => Splash(),
-          Login.id: (context) => Login(),
+      child: GestureDetector(
+        // This ensures that the keyboard disappears as soon as the user clicks outside the text filed
+        onTap: () {
+          FocusScopeNode currentFocus = FocusScope.of(context);
+          if (!currentFocus.hasPrimaryFocus &&
+              currentFocus.focusedChild != null) {
+            FocusManager.instance.primaryFocus.unfocus();
+          }
         },
+        child: MaterialApp(
+          title: 'Soochit',
+          debugShowCheckedModeBanner: false,
+          home: SplashPage(),
+          routes: {
+            Welcome.id: (context) => Welcome(),
+            Splash.id: (context) => Splash(),
+            Login.id: (context) => Login(),
+          },
+        ),
       ),
     );
   }
