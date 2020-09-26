@@ -1,4 +1,0 @@
-#Sat Sep 26 01:24:27 IST 2020
-base.0=/Users/rachitgupta/Documents/projects/soochit/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
