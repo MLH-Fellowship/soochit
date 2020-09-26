@@ -7,6 +7,9 @@ import 'package:soochit/pages/authentication/splash_page.dart';
 import 'package:soochit/stores/login_store.dart';
 import 'pages/welcome.dart';
 import 'pages/login.dart';
+import 'pages/doctor-specific/homeDoctor.dart';
+import 'pages/patient-specific/homePatient.dart';
+import 'pages/patient-specific/prescriptionHistory.dart';
 
 void main() {
   runApp(MyApp());
@@ -47,6 +50,9 @@ class _MyAppState extends State<MyApp> {
             HomePage.id: (context) => HomePage(),
             Welcome.id: (context) => Welcome(),
             Login.id: (context) => Login(),
+            HomeDoctor.id: (context) => HomeDoctor(),
+            HomePatient.id: (context) => HomePatient(),
+            PrescriptionHistory.id: (context) => PrescriptionHistory(),
           },
         ),
       ),

@@ -5,6 +5,7 @@ class MyColors {
   static const Color white = Colors.white;
   static const Color primaryColor = Color(0xFFF7575D);
   static const Color accentColor = Color(0xFFFDECED);
+  static const Color grey = Color(0xFF8D8D8D);
 
   //shades of pink
   static const Color lightPink = Color(0xFFF6B0B3);

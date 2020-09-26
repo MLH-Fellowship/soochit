@@ -23,4 +23,23 @@ class MyStrings {
   static const somethingGoneWrong = 'Something has gone wrong, please try later';
   static const invalidPhoneNumberFormat = 'The phone number format is incorrect. Please enter your number in E.164 format. [+][country code][number]';
   static const wrongCodeInput = 'Wrong code ! Please enter the last code received.';
+
+  //dummy data
+  static const patientName = "Rachit Gupta";
+  static const paracetamolLabel = "Paracetamol";
+  static const crocinLabel = "Crocin";
+  static const time = "12:00 PM";
+  static const date = "2nd October";
+  static const doctorName = "Dr. Rachit Gupta";
+
+  // >>>>>>>>>>>>>>>>>>>> PATIENT >>>>>>>>>>>>>>>>>>>>
+
+  //home
+  static const patientMedDeadlines = "$patientName's Medical Deadlines";
+
+  //prescription history
+  static const patientPrescriptionHistoryLabel = "$patientName's Prescription History";
+
+//TODO: >>>>>>>>>>>>>>>>>>>> DOCTOR >>>>>>>>>>>>>>>>>>>>
 }
+
