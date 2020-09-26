@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "88365186057",
+    "firebase_url": "https://soochit-mlh113-team3.firebaseio.com",
+    "project_id": "soochit-mlh113-team3",
+    "storage_bucket": "soochit-mlh113-team3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:88365186057:android:ac423c4e205332d8600cd8",
+        "android_client_info": {
+          "package_name": "com.example.soochit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "88365186057-p84oj48uvuk60ku0n0cb2qerv4r7fcth.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.soochit",
+            "certificate_hash": "b6917d7b9e3447f04ea3c5d20b6b83df827c2c9f"
+          }
+        },
+        {
+          "client_id": "88365186057-gdbs9u6c3aouep8pad8ps723ht8tifo5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCchNMEOnCRrsn2kgMusIFXr0mD025Pzng"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "88365186057-gdbs9u6c3aouep8pad8ps723ht8tifo5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
