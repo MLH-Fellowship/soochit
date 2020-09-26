@@ -10,6 +10,7 @@ import 'package:soochit/widgets/loader_hud.dart';
 import 'package:soochit/global/myColors.dart';
 
 class OtpPage extends StatefulWidget {
+  static String id="otp_page";
   OtpPage({Key key}) : super(key: key);
 
   @override
@@ -172,7 +173,7 @@ class _OtpPageState extends State<OtpPage> {
                           Container(
                             margin: EdgeInsets.symmetric(
                                 horizontal: MyDimens.double_20, vertical: MyDimens.double_10),
-                            constraints: BoxConstraints(maxWidth: 500),
+                            constraints: BoxConstraints(maxWidth: MyDimens.double_600),
                             child: Row(
                               children: [
                                 Expanded(

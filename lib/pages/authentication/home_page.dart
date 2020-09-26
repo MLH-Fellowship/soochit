@@ -3,7 +3,9 @@ import 'package:provider/provider.dart';
 import 'package:soochit/stores/login_store.dart';
 import 'package:soochit/global/myColors.dart';
 
+/* TODO: Remove and modify as per requirement. This is just has the signOut function*/
 class HomePage extends StatefulWidget {
+  static String id="home_page";
   HomePage({Key key}) : super(key: key);
   @override
   _HomePageState createState() => _HomePageState();

@@ -5,6 +5,7 @@ import 'package:soochit/pages/authentication/login_page.dart';
 import 'package:soochit/stores/login_store.dart';
 
 class SplashPage extends StatefulWidget {
+  static String id="splash_page";
   SplashPage({Key key}) : super(key: key);
   @override
   _SplashPageState createState() => _SplashPageState();

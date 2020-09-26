@@ -1,9 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
+import 'package:soochit/global/myStrings.dart';
 import 'package:soochit/pages/authentication/home_page.dart';
 import 'package:soochit/pages/authentication/login_page.dart';
 import 'package:soochit/pages/authentication/otp_page.dart';
+import 'package:soochit/widgets/snackbar.dart';
 
 part 'login_store.g.dart';
 
@@ -37,52 +39,42 @@ abstract class LoginStoreBase with Store {
   }
 
   @action
-  Future<void> getCodeWithPhoneNumber(BuildContext context, String phoneNumber) async {
+  Future<void> getCodeWithPhoneNumber(
+      BuildContext context, String phoneNumber) async {
     isLoginLoading = true;
 
     await _auth.verifyPhoneNumber(
         phoneNumber: phoneNumber,
         timeout: Duration(seconds: 60),
         verificationCompleted: (AuthCredential auth) async {
-          await _auth
-              .signInWithCredential(auth)
-              .then((AuthResult value) {
+          await _auth.signInWithCredential(auth).then((AuthResult value) {
             if (value != null && value.user != null) {
               print('Authentication successful');
               onAuthenticationSuccessful(context, value);
             } else {
-              loginScaffoldKey.currentState.showSnackBar(SnackBar(
-                behavior: SnackBarBehavior.floating,
-                backgroundColor: Colors.red,
-                content: Text('Invalid code/invalid authentication', style: TextStyle(color: Colors.white),),
-              ));
+              loginScaffoldKey.currentState.showSnackBar(
+                  getSnackBar(context, MyStrings.invalidCodeOrAuth));
             }
           }).catchError((error) {
-            loginScaffoldKey.currentState.showSnackBar(SnackBar(
-              behavior: SnackBarBehavior.floating,
-              backgroundColor: Colors.red,
-              content: Text('Something has gone wrong, please try later', style: TextStyle(color: Colors.white),),
-            ));
+            loginScaffoldKey.currentState.showSnackBar(
+                getSnackBar(context, MyStrings.somethingGoneWrong));
           });
         },
         verificationFailed: (AuthException authException) {
           print('Error message: ' + authException.message);
-          loginScaffoldKey.currentState.showSnackBar(SnackBar(
-            behavior: SnackBarBehavior.floating,
-            backgroundColor: Colors.red,
-            content: Text('The phone number format is incorrect. Please enter your number in E.164 format. [+][country code][number]', style: TextStyle(color: Colors.white),),
-          ));
+          loginScaffoldKey.currentState.showSnackBar(
+              getSnackBar(context, MyStrings.invalidPhoneNumberFormat));
           isLoginLoading = false;
         },
         codeSent: (String verificationId, [int forceResendingToken]) async {
           actualCode = verificationId;
           isLoginLoading = false;
-          await Navigator.of(context).push(MaterialPageRoute(builder: (_) => OtpPage()));
+          await Navigator.of(context)
+              .push(MaterialPageRoute(builder: (_) => OtpPage()));
         },
         codeAutoRetrievalTimeout: (String verificationId) {
           actualCode = verificationId;
-        }
-    );
+        });
   }
 
   @action
@@ -93,11 +85,8 @@ abstract class LoginStoreBase with Store {
 
     await _auth.signInWithCredential(_authCredential).catchError((error) {
       isOtpLoading = false;
-      otpScaffoldKey.currentState.showSnackBar(SnackBar(
-        behavior: SnackBarBehavior.floating,
-        backgroundColor: Colors.red,
-        content: Text('Wrong code ! Please enter the last code received.', style: TextStyle(color: Colors.white),),
-      ));
+      otpScaffoldKey.currentState
+          .showSnackBar(getSnackBar(context, MyStrings.wrongCodeInput));
     }).then((AuthResult authResult) {
       if (authResult != null && authResult.user != null) {
         print('Authentication successful');
@@ -106,13 +95,16 @@ abstract class LoginStoreBase with Store {
     });
   }
 
-  Future<void> onAuthenticationSuccessful(BuildContext context, AuthResult result) async {
+  Future<void> onAuthenticationSuccessful(
+      BuildContext context, AuthResult result) async {
     isLoginLoading = true;
     isOtpLoading = true;
 
     firebaseUser = result.user;
 
-    Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (_) => HomePage()), (Route<dynamic> route) => false);
+    Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (_) => HomePage()),
+        (Route<dynamic> route) => false);
 
     isLoginLoading = false;
     isOtpLoading = false;
@@ -121,7 +113,9 @@ abstract class LoginStoreBase with Store {
   @action
   Future<void> signOut(BuildContext context) async {
     await _auth.signOut();
-    await Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (_) =>  LoginPage()), (Route<dynamic> route) => false);
+    await Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (_) => LoginPage()),
+        (Route<dynamic> route) => false);
     firebaseUser = null;
   }
 }

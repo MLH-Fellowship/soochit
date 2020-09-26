@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:soochit/pages/authentication/home_page.dart';
+import 'package:soochit/pages/authentication/login_page.dart';
+import 'package:soochit/pages/authentication/otp_page.dart';
 import 'package:soochit/pages/authentication/splash_page.dart';
 import 'package:soochit/stores/login_store.dart';
 import 'pages/welcome.dart';
-import 'pages/splash.dart';
 import 'pages/login.dart';
 
 void main() {
@@ -39,8 +41,11 @@ class _MyAppState extends State<MyApp> {
           debugShowCheckedModeBanner: false,
           home: SplashPage(),
           routes: {
+            OtpPage.id: (context) => OtpPage(),
+            LoginPage.id: (context) => LoginPage(),
+            SplashPage.id: (context) => SplashPage(),
+            HomePage.id: (context) => HomePage(),
             Welcome.id: (context) => Welcome(),
-            Splash.id: (context) => Splash(),
             Login.id: (context) => Login(),
           },
         ),

@@ -7,8 +7,11 @@ import 'package:soochit/global/myStrings.dart';
 import 'package:soochit/global/myColors.dart';
 import 'package:soochit/stores/login_store.dart';
 import 'package:soochit/widgets/loader_hud.dart';
+import 'package:soochit/widgets/snackbar.dart';
 
 class LoginPage extends StatefulWidget {
+  static String id = "login_page";
+
   LoginPage({Key key}) : super(key: key);
 
   @override
@@ -41,7 +44,7 @@ class _LoginPageState extends State<LoginPage> {
                                 margin: EdgeInsets.only(
                                   left: MyDimens.double_30,
                                   right: MyDimens.double_30,
-                                  top: MyDimens.double_25*2,
+                                  top: MyDimens.double_25 * 2,
                                 ),
                                 child: Column(
                                   // ignore: prefer_const_literals_to_create_immutable
@@ -83,7 +86,8 @@ class _LoginPageState extends State<LoginPage> {
                                     fit: BoxFit.cover,
                                   )),
                               Container(
-                                margin: EdgeInsets.symmetric(horizontal: MyDimens.double_30),
+                                margin: EdgeInsets.symmetric(
+                                    horizontal: MyDimens.double_30),
                                 child: Align(
                                   alignment: Alignment.centerLeft,
                                   child: Text(MyStrings.phoneRequest,
@@ -91,8 +95,8 @@ class _LoginPageState extends State<LoginPage> {
                                           .textTheme
                                           .bodyText2
                                           .copyWith(
-                                          color: MyColors.white,
-                                          fontFamily: 'lexenddeca')),
+                                              color: MyColors.white,
+                                              fontFamily: 'lexenddeca')),
                                 ),
                               ),
                               Container(
@@ -121,7 +125,7 @@ class _LoginPageState extends State<LoginPage> {
                                         OverlayVisibilityMode.editing,
                                     keyboardType: TextInputType.phone,
                                     maxLines: 1,
-                                    placeholder: 'Phone Number (include +91)',
+                                    placeholder: MyStrings.placeholderLoginAuth,
                                     placeholderStyle: Theme.of(context)
                                         .textTheme
                                         .subtitle1
@@ -148,21 +152,10 @@ class _LoginPageState extends State<LoginPage> {
                                           } else {
                                             loginStore
                                                 .loginScaffoldKey.currentState
-                                                .showSnackBar(SnackBar(
-                                              behavior:
-                                                  SnackBarBehavior.floating,
-                                              backgroundColor: MyColors.white,
-                                              content: Text(
-                                                  'Please enter a valid phone number',
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .bodyText1
-                                                      .copyWith(
-                                                          color: MyColors
-                                                              .primaryColor,
-                                                          fontFamily:
-                                                              'lexenddeca')),
-                                            ));
+                                                .showSnackBar(getSnackBar(
+                                                    context,
+                                                    MyStrings
+                                                        .invalidPhoneNumber));
                                           }
                                         },
                                         shape: RoundedRectangleBorder(
