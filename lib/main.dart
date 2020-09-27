@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:soochit/pages/authentication/signout.dart';
 import 'package:soochit/pages/authentication/register.dart';
 import 'package:soochit/pages/authentication/enterOTP.dart';
-import 'package:soochit/pages/authentication/splashScreen.dart';
+import 'package:soochit/pages/authentication/splash_page.dart';
 import 'package:soochit/stores/login_store.dart';
 import 'pages/welcome.dart';
 import 'pages/login.dart';
@@ -42,7 +42,7 @@ class _MyAppState extends State<MyApp> {
         child: MaterialApp(
           title: 'Soochit',
           debugShowCheckedModeBanner: false,
-          home: PrescriptionHistory(),
+          home: HomePatient(),
           routes: {
             EnterOTP.id: (context) => EnterOTP(),
             Register.id: (context) => Register(),
