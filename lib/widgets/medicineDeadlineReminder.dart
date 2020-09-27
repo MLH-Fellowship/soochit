@@ -11,6 +11,20 @@ class MedicineDeadlineReminder extends StatelessWidget {
     return Column(
       children: [
         Container(
+          height: MyDimens.double_35,
+          width: MediaQuery.of(context).size.width*0.80,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(topLeft: Radius.circular(MyDimens.double_10),topRight: Radius.circular(MyDimens.double_10)),
+            color: MyColors.primaryColor,
+          ),
+          child: Align(
+            child: Text(
+              MyStrings.time, style: Theme.of(context).textTheme.subtitle1.copyWith(color: MyColors.white, fontFamily: 'lexenddeca'),
+            ),
+              alignment: Alignment.center,
+          )
+        ),
+        Container(
             padding: EdgeInsets.symmetric(horizontal: MyDimens.double_30),
             height: MyDimens.double_200-MyDimens.double_35,
             width: MediaQuery.of(context).size.width*0.80,

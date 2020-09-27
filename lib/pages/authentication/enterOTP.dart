@@ -3,7 +3,6 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:numeric_keyboard/numeric_keyboard.dart';
 import 'package:provider/provider.dart';
 import 'package:soochit/global/myDimens.dart';
-import 'package:soochit/global/mySpaces.dart';
 import 'package:soochit/global/myStrings.dart';
 import 'package:soochit/stores/login_store.dart';
 import 'package:soochit/widgets/loaderHud.dart';
@@ -33,7 +32,8 @@ class _EnterOTPState extends State<EnterOTP> {
         height: MyDimens.double_40,
         width: MyDimens.double_40,
         decoration: BoxDecoration(
-            color: MyColors.lightPink,
+
+            color: MyColors.inputFieldPink,
             border: Border.all(color: MyColors.lighterPink),
             borderRadius: BorderRadius.all(Radius.circular(MyDimens.double_4))),
         child: Center(

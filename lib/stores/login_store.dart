@@ -86,7 +86,7 @@ abstract class LoginStoreBase with Store {
     await _auth.signInWithCredential(_authCredential).catchError((error) {
       isOtpLoading = false;
       otpScaffoldKey.currentState
-          .showSnackBar(getSnackBar(context, MyStrings.wrongCodeInput));
+          .showSnackBar(getSnackBar(context, MyStrings.incorrectOTP));
     }).then((AuthResult authResult) {
       if (authResult != null && authResult.user != null) {
         print('Authentication successful');

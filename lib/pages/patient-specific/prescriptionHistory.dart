@@ -14,28 +14,42 @@ class PrescriptionHistory extends StatefulWidget {
 class _PrescriptionHistoryState extends State<PrescriptionHistory> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(MyDimens.double_30),
-      child: Column(
-        children: [
-          MySpaces.vMediumGapInBetween,
-          Text(
-            MyStrings.patientPrescriptionHistoryLabel, style: Theme.of(context).textTheme.headline4.copyWith(color: MyColors.primaryColor, fontFamily: 'airbnb'),
-          ),
-          MySpaces.vLargeGapInBetween,
-          Column(
-            children: [
-              PrescriptionHistoryCard(),
-              MySpaces.vSmallGapInBetween,
-              PrescriptionHistoryCard(),
-              MySpaces.vSmallGapInBetween,
-              PrescriptionHistoryCard(),
-              MySpaces.vSmallGapInBetween,
-              PrescriptionHistoryCard()
+    return Scaffold(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Container(
+            margin: EdgeInsets.all(MyDimens.double_30),
+            child: Column(
+              children: [
+                MySpaces.vMediumGapInBetween,
+                Text(
+                  MyStrings.patientPrescriptionHistoryLabel, style: Theme.of(context).textTheme.headline4.copyWith(color: MyColors.primaryColor, fontFamily: 'airbnb'),
+                ),
+                MySpaces.vLargeGapInBetween,
+                Column(
+                  children: [
+                    PrescriptionHistoryCard(),
+                    MySpaces.vSmallGapInBetween,
+                    PrescriptionHistoryCard(),
+                    MySpaces.vSmallGapInBetween,
+                    PrescriptionHistoryCard(),
+                    MySpaces.vSmallGapInBetween,
+                    PrescriptionHistoryCard(),
+                    MySpaces.vSmallGapInBetween,
+                    PrescriptionHistoryCard(),
+                    MySpaces.vSmallGapInBetween,
+                    PrescriptionHistoryCard(),
+                    MySpaces.vSmallGapInBetween,
+                    PrescriptionHistoryCard(),
+                    MySpaces.vSmallGapInBetween,
+                    PrescriptionHistoryCard()
 
-            ],
-          )
-        ],
+                  ],
+                )
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
