@@ -6,18 +6,19 @@ import 'package:soochit/global/myDimens.dart';
 import 'package:soochit/global/mySpaces.dart';
 import 'package:soochit/global/myStrings.dart';
 import 'package:soochit/stores/login_store.dart';
-import 'package:soochit/widgets/loader_hud.dart';
+import 'package:soochit/widgets/loaderHud.dart';
 import 'package:soochit/global/myColors.dart';
 
-class OtpPage extends StatefulWidget {
+class EnterOTP extends StatefulWidget {
   static String id="otp_page";
-  OtpPage({Key key}) : super(key: key);
+
+  EnterOTP({Key key}) : super(key: key);
 
   @override
-  _OtpPageState createState() => _OtpPageState();
+  _EnterOTPState createState() => _EnterOTPState();
 }
 
-class _OtpPageState extends State<OtpPage> {
+class _EnterOTPState extends State<EnterOTP> {
   String text = '';
 
   void _onKeyboardTap(String value) {
@@ -89,85 +90,47 @@ class _OtpPageState extends State<OtpPage> {
               ),
               body: SafeArea(
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Expanded(
                       child: Column(
-                        mainAxisSize: MainAxisSize.max,
                         children: <Widget>[
                           Expanded(
                             child: SingleChildScrollView(
-                              child: Column(
-                                children: <Widget>[
-                                  Container(
-                                    margin: EdgeInsets.only(
-                                      top: MyDimens.double_20,
-                                      left: MyDimens.double_20,
-                                      right: MyDimens.double_20,
-                                      bottom: MyDimens.double_20,
-                                    ),
-                                    child: Column(
-                                      // ignore: prefer_const_literals_to_create_immutables
-                                      children: <Widget>[
-                                        // ignore: prefer_const_literals_to_create_immutables, prefer_const_literals_to_create_immutables
-                                        Align(
-                                          alignment: Alignment.centerLeft,
-                                          child: Text(
-                                            MyStrings.welcomeToLabel,
+                              child: Padding(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Container(
+                                      margin: EdgeInsets.all(MyDimens.double_20),
+                                      child: Align(
+                                        alignment: Alignment.centerLeft,
+                                        child: Text(MyStrings.otpRequest,
                                             style: Theme.of(context)
                                                 .textTheme
-                                                .headline4
+                                                .bodyText2
                                                 .copyWith(
-                                                    color: MyColors.lighterPink,
-                                                    fontFamily: 'airbnb',
-                                                    fontSize: 30),
-                                          ),
-                                        ),
-                                        Align(
-                                          alignment: Alignment.centerLeft,
-                                          child: Text(MyStrings.appName,
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .headline3
-                                                  .copyWith(
-                                                      color: MyColors.white,
-                                                      fontFamily: 'airbnb')),
-                                        ),
-                                        MySpaces.vSmallGapInBetween,
-                                        Align(
-                                          alignment: Alignment.centerLeft,
-                                          child: Text(MyStrings.otpRequest,
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .bodyText2
-                                                  .copyWith(
-                                                  color: MyColors.white,
-                                                  fontFamily: 'lexenddeca')),
-                                        ),
-                                      ],
+                                                color: MyColors.white,
+                                                fontFamily: 'lexenddeca')),
+                                      ),
                                     ),
-                                  ),
-
-                                  Container(
-                                    constraints: BoxConstraints(maxWidth: MyDimens.double_600),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: <Widget>[
-                                        otpNumberWidget(0),
-                                        otpNumberWidget(1),
-                                        otpNumberWidget(2),
-                                        otpNumberWidget(3),
-                                        otpNumberWidget(4),
-                                        otpNumberWidget(5),
-                                      ],
+                                    Container(
+                                      constraints: BoxConstraints(maxWidth: MyDimens.double_600),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                        children: <Widget>[
+                                          otpNumberWidget(0),
+                                          otpNumberWidget(1),
+                                          otpNumberWidget(2),
+                                          otpNumberWidget(3),
+                                          otpNumberWidget(4),
+                                          otpNumberWidget(5),
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                ],
-                              ),
+                                  ],
+                                ),
+                                  padding: EdgeInsets.symmetric(vertical: MyDimens.double_100),
+                              )
                             ),
                           ),
                           Container(

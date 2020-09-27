@@ -6,19 +6,19 @@ import 'package:soochit/global/myDimens.dart';
 import 'package:soochit/global/myStrings.dart';
 import 'package:soochit/global/myColors.dart';
 import 'package:soochit/stores/login_store.dart';
-import 'package:soochit/widgets/loader_hud.dart';
+import 'package:soochit/widgets/loaderHud.dart';
 import 'package:soochit/widgets/snackbar.dart';
 
-class LoginPage extends StatefulWidget {
+class Register extends StatefulWidget {
   static String id = "login_page";
 
-  LoginPage({Key key}) : super(key: key);
+  Register({Key key}) : super(key: key);
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _RegisterState createState() => _RegisterState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterState extends State<Register> {
   TextEditingController phoneController = TextEditingController();
 
   @override
@@ -37,6 +37,7 @@ class _LoginPageState extends State<LoginPage> {
                     child: Container(
                       height: MediaQuery.of(context).size.height,
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Column(
                             children: <Widget>[
@@ -50,29 +51,6 @@ class _LoginPageState extends State<LoginPage> {
                                   // ignore: prefer_const_literals_to_create_immutable
                                   children: <Widget>[
                                     // ignore: prefer_const_literals_to_create_immutables, prefer_const_literals_to_create_immutables
-                                    Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Text(
-                                        MyStrings.welcomeToLabel,
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .headline4
-                                            .copyWith(
-                                                color: MyColors.lighterPink,
-                                                fontFamily: 'airbnb',
-                                                fontSize: 30),
-                                      ),
-                                    ),
-                                    Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Text(MyStrings.appName,
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .headline3
-                                              .copyWith(
-                                                  color: MyColors.white,
-                                                  fontFamily: 'airbnb')),
-                                    ),
                                   ],
                                 ),
                               ),
@@ -110,13 +88,13 @@ class _LoginPageState extends State<LoginPage> {
                                     padding: EdgeInsets.symmetric(
                                         horizontal: MyDimens.double_15),
                                     decoration: BoxDecoration(
-                                        color: MyColors.lightPink,
+                                        color: MyColors.inputFieldPink,
                                         borderRadius: BorderRadius.all(
                                             Radius.circular(
                                                 MyDimens.double_4))),
                                     style: Theme.of(context)
                                         .textTheme
-                                        .headline6
+                                        .subtitle1
                                         .copyWith(
                                             color: MyColors.lightestPink,
                                             fontFamily: 'lexenddeca'),
@@ -128,9 +106,9 @@ class _LoginPageState extends State<LoginPage> {
                                     placeholder: MyStrings.placeholderLoginAuth,
                                     placeholderStyle: Theme.of(context)
                                         .textTheme
-                                        .subtitle1
-                                        .copyWith(
-                                            color: MyColors.lightestPink,
+                                        .headline6
+                                        .copyWith(fontSize: 18,
+                                            color: MyColors.inputFieldTextPink,
                                             fontFamily: 'lexenddeca')),
                               ),
                               Container(

@@ -2,9 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:soochit/global/myStrings.dart';
-import 'package:soochit/pages/authentication/home_page.dart';
-import 'package:soochit/pages/authentication/login_page.dart';
-import 'package:soochit/pages/authentication/otp_page.dart';
+import 'package:soochit/pages/authentication/signout.dart';
+import 'package:soochit/pages/authentication/register.dart';
+import 'package:soochit/pages/authentication/enterOTP.dart';
 import 'package:soochit/widgets/snackbar.dart';
 
 part 'login_store.g.dart';
@@ -70,7 +70,7 @@ abstract class LoginStoreBase with Store {
           actualCode = verificationId;
           isLoginLoading = false;
           await Navigator.of(context)
-              .push(MaterialPageRoute(builder: (_) => OtpPage()));
+              .push(MaterialPageRoute(builder: (_) => EnterOTP()));
         },
         codeAutoRetrievalTimeout: (String verificationId) {
           actualCode = verificationId;
@@ -114,7 +114,7 @@ abstract class LoginStoreBase with Store {
   Future<void> signOut(BuildContext context) async {
     await _auth.signOut();
     await Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute(builder: (_) => LoginPage()),
+        MaterialPageRoute(builder: (_) => Register()),
         (Route<dynamic> route) => false);
     firebaseUser = null;
   }
