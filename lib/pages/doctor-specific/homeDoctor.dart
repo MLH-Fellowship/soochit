@@ -24,7 +24,7 @@ class _HomeDoctorState extends State<HomeDoctor> {
               children: [
                 MySpaces.vMediumGapInBetween,
                 Text(
-                  MyStrings.patientPrescriptionHistoryLabel, style: Theme.of(context).textTheme.headline4.copyWith(color: MyColors.primaryColor, fontFamily: 'airbnb'),
+                  MyStrings.doctorPreviousPatients, style: Theme.of(context).textTheme.headline4.copyWith(color: MyColors.primaryColor, fontFamily: 'airbnb'),
                 ),
                 MySpaces.vLargeGapInBetween,
                 Container(

@@ -21,48 +21,56 @@ class _SamplePatientProfileState extends State<SamplePatientProfile> {
             child: Container(
               margin: EdgeInsets.all(MyDimens.double_30),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  MySpaces.vMediumGapInBetween,
-                  Text(
-                    MyStrings.patientName, style: Theme.of(context).textTheme.headline4.copyWith(color: MyColors.primaryColor, fontFamily: 'airbnb'),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      MySpaces.vMediumGapInBetween,
+                      Text(
+                        MyStrings.patientName, style: Theme.of(context).textTheme.headline4.copyWith(color: MyColors.primaryColor, fontFamily: 'airbnb'),
+                      ),
+                      MySpaces.vSmallGapInBetween,
+                      Text(
+                        MyStrings.ageLabel + ":", style: Theme.of(context).textTheme.bodyText1.copyWith(color: MyColors.grey, fontFamily: 'lexenddeca'),
+                      ),
+                      Text(
+                        MyStrings.sampleAge + " " + MyStrings.yearsOldLabel, style: Theme.of(context).textTheme.headline5.copyWith(color: MyColors.black, fontFamily: 'lexenddeca'),
+                      ),
+                      MySpaces.vSmallGapInBetween,
+                      Text(
+                        MyStrings.phoneNumberLabel + ":", style: Theme.of(context).textTheme.bodyText1.copyWith(color: MyColors.grey, fontFamily: 'lexenddeca'),
+                      ),
+                      Text(
+                        MyStrings.phoneNumber, style: Theme.of(context).textTheme.headline5.copyWith(color: MyColors.black, fontFamily: 'lexenddeca'),
+                      ),
+                      MySpaces.vSmallGapInBetween,
+                      Container(
+                        width: double.infinity,
+                        height: MyDimens.double_1,
+                        color: MyColors.grey,
+                      ),
+                      MySpaces.vSmallGapInBetween,
+                    ],
                   ),
-                  MySpaces.vSmallGapInBetween,
-                  Text(
-                    MyStrings.ageLabel + ":", style: Theme.of(context).textTheme.bodyText1.copyWith(color: MyColors.grey, fontFamily: 'lexenddeca'),
+                  Column(
+                    children: [
+                      PrescriptionHistoryCard(),
+                      MySpaces.vSmallGapInBetween,
+                      PrescriptionHistoryCard(),
+                      MySpaces.vSmallGapInBetween,
+                      PrescriptionHistoryCard(),
+                      MySpaces.vSmallGapInBetween,
+                      PrescriptionHistoryCard(),
+                      MySpaces.vSmallGapInBetween,
+                      PrescriptionHistoryCard(),
+                      MySpaces.vSmallGapInBetween,
+                      PrescriptionHistoryCard(),
+                      MySpaces.vSmallGapInBetween,
+                      PrescriptionHistoryCard(),
+                    ],
                   ),
-                  Text(
-                    MyStrings.sampleAge + " " + MyStrings.yearsOldLabel, style: Theme.of(context).textTheme.headline5.copyWith(color: MyColors.black, fontFamily: 'lexenddeca'),
-                  ),
-                  MySpaces.vSmallGapInBetween,
-                  Text(
-                    MyStrings.phoneNumberLabel + ":", style: Theme.of(context).textTheme.bodyText1.copyWith(color: MyColors.grey, fontFamily: 'lexenddeca'),
-                  ),
-                  Text(
-                    MyStrings.phoneNumber, style: Theme.of(context).textTheme.headline5.copyWith(color: MyColors.black, fontFamily: 'lexenddeca'),
-                  ),
-                  MySpaces.vSmallGapInBetween,
-                  Container(
-                    width: double.infinity,
-                    height: MyDimens.double_1,
-                    color: MyColors.grey,
-                  ),
-                  MySpaces.vSmallGapInBetween,
-                  PrescriptionHistoryCard(),
-                  MySpaces.vSmallGapInBetween,
-                  PrescriptionHistoryCard(),
-                  MySpaces.vSmallGapInBetween,
-                  PrescriptionHistoryCard(),
-                  MySpaces.vSmallGapInBetween,
-                  PrescriptionHistoryCard(),
-                  MySpaces.vSmallGapInBetween,
-                  PrescriptionHistoryCard(),
-                  MySpaces.vSmallGapInBetween,
-                  PrescriptionHistoryCard(),
-                  MySpaces.vSmallGapInBetween,
-                  PrescriptionHistoryCard(),
                 ],
-              ),
+              )
             ),
           )
       ),
