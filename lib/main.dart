@@ -10,6 +10,8 @@ import 'pages/login.dart';
 import 'pages/doctor-specific/homeDoctor.dart';
 import 'pages/patient-specific/homePatient.dart';
 import 'pages/patient-specific/prescriptionHistory.dart';
+import 'pages/doctor-specific/samplePatientProfile.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -42,7 +44,7 @@ class _MyAppState extends State<MyApp> {
         child: MaterialApp(
           title: 'Soochit',
           debugShowCheckedModeBanner: false,
-          home: EnterOTP(),
+          home: SamplePatientProfile(),
           routes: {
             EnterOTP.id: (context) => EnterOTP(),
             Register.id: (context) => Register(),
@@ -53,6 +55,7 @@ class _MyAppState extends State<MyApp> {
             HomeDoctor.id: (context) => HomeDoctor(),
             HomePatient.id: (context) => HomePatient(),
             PrescriptionHistory.id: (context) => PrescriptionHistory(),
+            SamplePatientProfile.id: (context) => SamplePatientProfile(),
           },
         ),
       ),

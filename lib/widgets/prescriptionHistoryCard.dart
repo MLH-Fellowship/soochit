@@ -26,7 +26,7 @@ class PrescriptionHistoryCard extends StatelessWidget {
             ),
             MySpaces.vSmallestGapInBetween,
             Text(
-              MyStrings.doctorName,style: Theme.of(context).textTheme.bodyText2.copyWith(color: MyColors.grey, fontFamily: 'lexenddeca'),
+              MyStrings.sampleProblem,style: Theme.of(context).textTheme.bodyText2.copyWith(color: MyColors.grey, fontFamily: 'lexenddeca'),
             ),
           ],
         )
