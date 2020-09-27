@@ -32,7 +32,6 @@ class _EnterOTPState extends State<EnterOTP> {
         height: MyDimens.double_40,
         width: MyDimens.double_40,
         decoration: BoxDecoration(
-
             color: MyColors.inputFieldPink,
             border: Border.all(color: MyColors.lighterPink),
             borderRadius: BorderRadius.all(Radius.circular(MyDimens.double_4))),
