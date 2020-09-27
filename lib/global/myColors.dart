@@ -12,4 +12,7 @@ class MyColors {
   static const Color lighterPink =  Color(0xFFFCBEC1);
   static const Color lightestPink = Color(0xFFFDECED);
 
+  static const Color inputFieldPink = Color(0xFFF87277);
+  static const Color inputFieldTextPink = Color(0xFFFBB5B8);
+
 }

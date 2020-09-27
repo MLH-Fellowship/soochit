@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:soochit/pages/authentication//home_page.dart';
-import 'package:soochit/pages/authentication/login_page.dart';
+import 'package:soochit/pages/authentication//signout.dart';
+import 'package:soochit/pages/authentication/register.dart';
 import 'package:soochit/stores/login_store.dart';
 
 class SplashPage extends StatefulWidget {
@@ -20,7 +20,7 @@ class _SplashPageState extends State<SplashPage> {
       if (result) {
         Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (_) =>  HomePage()), (Route<dynamic> route) => false);
       } else {
-        Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (_) =>  LoginPage()), (Route<dynamic> route) => false);
+        Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (_) =>  Register()), (Route<dynamic> route) => false);
       }
     });
   }
