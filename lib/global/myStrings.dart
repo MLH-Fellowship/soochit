@@ -31,6 +31,7 @@ class MyStrings {
   static const time = "12:00 PM";
   static const date = "2nd October";
   static const doctorName = "Dr. Rachit Gupta";
+  static const phoneNumber = "+91 0000000000";
 
   // >>>>>>>>>>>>>>>>>>>> PATIENT >>>>>>>>>>>>>>>>>>>>
 
@@ -40,6 +41,18 @@ class MyStrings {
   //prescription history
   static const patientPrescriptionHistoryLabel = "$patientName's Prescription History";
 
-//TODO: >>>>>>>>>>>>>>>>>>>> DOCTOR >>>>>>>>>>>>>>>>>>>>
+  // >>>>>>>>>>>>>>>>>>>> DOCTOR >>>>>>>>>>>>>>>>>>>>
+
+  //home
+  static const doctorPreviousPatients = "$doctorName's Previous Patients";
+  static const recentAppointmentDate = "2nd Oct";
+
+  //patient's profile (doctor's pov)
+  static const ageLabel = "Age";
+  static const phoneNumberLabel = "Phone number";
+  static const sampleAge = "21";
+  static const yearsOldLabel = "years old";
+  static const sampleProblem = "Problem: constant cough";
+  static const searchPatientsLabel = "Search patients";
 }
 
