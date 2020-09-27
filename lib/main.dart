@@ -42,7 +42,7 @@ class _MyAppState extends State<MyApp> {
         child: MaterialApp(
           title: 'Soochit',
           debugShowCheckedModeBanner: false,
-          home: HomePatient(),
+          home: SplashPage(),
           routes: {
             EnterOTP.id: (context) => EnterOTP(),
             Register.id: (context) => Register(),
