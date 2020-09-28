@@ -2,9 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:soochit/global/myStrings.dart';
-import 'package:soochit/pages/authentication/home_page.dart';
-import 'package:soochit/pages/authentication/login_page.dart';
-import 'package:soochit/pages/authentication/otp_page.dart';
+import 'package:soochit/pages/authentication/signout.dart';
+import 'package:soochit/pages/authentication/register.dart';
+import 'package:soochit/pages/authentication/enterOTP.dart';
 import 'package:soochit/widgets/snackbar.dart';
 
 part 'login_store.g.dart';
@@ -70,7 +70,7 @@ abstract class LoginStoreBase with Store {
           actualCode = verificationId;
           isLoginLoading = false;
           await Navigator.of(context)
-              .push(MaterialPageRoute(builder: (_) => OtpPage()));
+              .push(MaterialPageRoute(builder: (_) => EnterOTP()));
         },
         codeAutoRetrievalTimeout: (String verificationId) {
           actualCode = verificationId;
@@ -86,7 +86,7 @@ abstract class LoginStoreBase with Store {
     await _auth.signInWithCredential(_authCredential).catchError((error) {
       isOtpLoading = false;
       otpScaffoldKey.currentState
-          .showSnackBar(getSnackBar(context, MyStrings.wrongCodeInput));
+          .showSnackBar(getSnackBar(context, MyStrings.incorrectOTP));
     }).then((AuthResult authResult) {
       if (authResult != null && authResult.user != null) {
         print('Authentication successful');
@@ -104,7 +104,7 @@ abstract class LoginStoreBase with Store {
 
     Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(builder: (_) => HomePage()),
-        (Route<dynamic> route) => false);
+            (Route<dynamic> route) => false);
 
     isLoginLoading = false;
     isOtpLoading = false;
@@ -114,8 +114,8 @@ abstract class LoginStoreBase with Store {
   Future<void> signOut(BuildContext context) async {
     await _auth.signOut();
     await Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute(builder: (_) => LoginPage()),
-        (Route<dynamic> route) => false);
+        MaterialPageRoute(builder: (_) => Register()),
+            (Route<dynamic> route) => false);
     firebaseUser = null;
   }
 }

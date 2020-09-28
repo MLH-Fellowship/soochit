@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:soochit/pages/authentication/home_page.dart';
-import 'package:soochit/pages/authentication/login_page.dart';
-import 'package:soochit/pages/authentication/otp_page.dart';
+import 'package:soochit/pages/authentication/signout.dart';
+import 'package:soochit/pages/authentication/register.dart';
+import 'package:soochit/pages/authentication/enterOTP.dart';
 import 'package:soochit/pages/authentication/splash_page.dart';
+import 'package:soochit/pages/doctor-specific/doctorProfile.dart';
+import 'package:soochit/pages/doctor-specific/homeDoctor.dart';
+import 'package:soochit/pages/patient-specific/homePatient.dart';
 import 'package:soochit/stores/login_store.dart';
 import 'pages/welcome.dart';
 import 'pages/login.dart';
-import 'pages/doctor-specific/homeDoctor.dart';
-import 'pages/patient-specific/homePatient.dart';
+import 'pages/doctor-specific/patientHistory.dart';
+import 'pages/patient-specific/medicineDeadlines.dart';
 import 'pages/patient-specific/prescriptionHistory.dart';
+import 'pages/doctor-specific/samplePatientProfile.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -44,15 +49,18 @@ class _MyAppState extends State<MyApp> {
           debugShowCheckedModeBanner: false,
           home: SplashPage(),
           routes: {
-            OtpPage.id: (context) => OtpPage(),
-            LoginPage.id: (context) => LoginPage(),
+            EnterOTP.id: (context) => EnterOTP(),
+            Register.id: (context) => Register(),
             SplashPage.id: (context) => SplashPage(),
             HomePage.id: (context) => HomePage(),
             Welcome.id: (context) => Welcome(),
             Login.id: (context) => Login(),
-            HomeDoctor.id: (context) => HomeDoctor(),
-            HomePatient.id: (context) => HomePatient(),
+            PatientHistory.id: (context) => PatientHistory(),
+            MedicineDeadlines.id: (context) => MedicineDeadlines(),
             PrescriptionHistory.id: (context) => PrescriptionHistory(),
+            SamplePatientProfile.id: (context) => SamplePatientProfile(),
+            HomePatient.id: (context) => HomePatient(),
+            DoctorProfile.id: (context) => DoctorProfile()
           },
         ),
       ),
