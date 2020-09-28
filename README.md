@@ -1,3 +1,10 @@
+<p align="center">  
+ <a href="https://github.com/MLH-Fellowship/soochit/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg"></a>
+  <a href="https://github.com/Solido/awesome-flutter">
+   <img alt="Awesome Flutter" src="https://img.shields.io/badge/Awesome-Flutter-blue.svg?longCache=true&style=flat-square" />
+</a>
+</p>
+
 # Soochit 👩‍⚕️
 
 Not just another medicine reminder.
