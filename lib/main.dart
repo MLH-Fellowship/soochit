@@ -4,11 +4,14 @@ import 'package:soochit/pages/authentication/signout.dart';
 import 'package:soochit/pages/authentication/register.dart';
 import 'package:soochit/pages/authentication/enterOTP.dart';
 import 'package:soochit/pages/authentication/splash_page.dart';
+import 'package:soochit/pages/doctor-specific/doctorProfile.dart';
+import 'package:soochit/pages/doctor-specific/homeDoctor.dart';
+import 'package:soochit/pages/patient-specific/homePatient.dart';
 import 'package:soochit/stores/login_store.dart';
 import 'pages/welcome.dart';
 import 'pages/login.dart';
-import 'pages/doctor-specific/homeDoctor.dart';
-import 'pages/patient-specific/homePatient.dart';
+import 'pages/doctor-specific/patientHistory.dart';
+import 'pages/patient-specific/medicineDeadlines.dart';
 import 'pages/patient-specific/prescriptionHistory.dart';
 import 'pages/doctor-specific/samplePatientProfile.dart';
 
@@ -44,7 +47,7 @@ class _MyAppState extends State<MyApp> {
         child: MaterialApp(
           title: 'Soochit',
           debugShowCheckedModeBanner: false,
-          home: SamplePatientProfile(),
+          home: HomeDoctor(),
           routes: {
             EnterOTP.id: (context) => EnterOTP(),
             Register.id: (context) => Register(),
@@ -52,10 +55,12 @@ class _MyAppState extends State<MyApp> {
             HomePage.id: (context) => HomePage(),
             Welcome.id: (context) => Welcome(),
             Login.id: (context) => Login(),
-            HomeDoctor.id: (context) => HomeDoctor(),
-            HomePatient.id: (context) => HomePatient(),
+            PatientHistory.id: (context) => PatientHistory(),
+            MedicineDeadlines.id: (context) => MedicineDeadlines(),
             PrescriptionHistory.id: (context) => PrescriptionHistory(),
             SamplePatientProfile.id: (context) => SamplePatientProfile(),
+            HomePatient.id: (context) => HomePatient(),
+            DoctorProfile.id: (context) => DoctorProfile()
           },
         ),
       ),
