@@ -35,7 +35,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="http://rachitgupta.co"><img src="https://avatars1.githubusercontent.com/u/44428198?v=4" width="100px;" alt=""/><br /><sub><b>Rachit Gupta</b></sub></a><br /><a href="https://github.com/MLH-Fellowship/soochit/commits?author=dotrachit" title="Code">💻</a></td>
+    <td align="center"><a href="http://rachitgupta.co"><img src="https://avatars1.githubusercontent.com/u/44428198?v=4" width="100px;" alt=""/><br /><sub><b>Rachit Gupta</b></sub></a><br /><a href="https://github.com/MLH-Fellowship/soochit/commits?author=dotrachit" title="Code">💻</a> <a href="#design-dotrachit" title="Design">🎨</a></td>
   </tr>
 </table>
 
