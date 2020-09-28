@@ -6,7 +6,7 @@ import 'package:soochit/global/myStrings.dart';
 import 'package:soochit/widgets/medicineDeadlineReminder.dart';
 
 class MedicineDeadlines extends StatefulWidget {
-  static String id = "homePatient";
+  static String id = "medicineDeadlines";
   @override
   _MedicineDeadlinesState createState() => _MedicineDeadlinesState();
 }
