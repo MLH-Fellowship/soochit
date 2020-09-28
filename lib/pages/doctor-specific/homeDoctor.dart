@@ -5,7 +5,7 @@ import 'package:soochit/pages/doctor-specific/patientHistory.dart';
 import 'package:soochit/pages/doctor-specific/doctorProfile.dart';
 
 class HomeDoctor extends StatefulWidget {
-  static String id = "bottomNavPatient";
+  static String id = "homeDoctor";
   @override
   _HomeDoctorState createState() => _HomeDoctorState();
 }

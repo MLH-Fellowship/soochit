@@ -6,7 +6,7 @@ import 'package:soochit/global/myStrings.dart';
 import 'package:soochit/widgets/previousPatientCard.dart';
 
 class PatientHistory extends StatefulWidget {
-  static String id = "homeDoctor";
+  static String id = "patientHistory";
   @override
   _PatientHistoryState createState() => _PatientHistoryState();
 }

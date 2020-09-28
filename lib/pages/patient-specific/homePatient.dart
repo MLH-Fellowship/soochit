@@ -5,7 +5,7 @@ import 'package:soochit/pages/patient-specific/medicineDeadlines.dart';
 import 'package:soochit/pages/patient-specific/prescriptionHistory.dart';
 
 class HomePatient extends StatefulWidget {
-  static String id = "bottomNavPatient";
+  static String id = "homePatient";
   @override
   _HomePatientState createState() => _HomePatientState();
 }
