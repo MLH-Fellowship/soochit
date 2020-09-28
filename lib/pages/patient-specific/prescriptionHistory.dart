@@ -18,7 +18,7 @@ class _PrescriptionHistoryState extends State<PrescriptionHistory> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
-            margin: EdgeInsets.all(MyDimens.double_30),
+            margin: EdgeInsets.symmetric(vertical: MyDimens.double_10, horizontal: MyDimens.double_30),
             child: Column(
               children: [
                 MySpaces.vMediumGapInBetween,
@@ -43,7 +43,6 @@ class _PrescriptionHistoryState extends State<PrescriptionHistory> {
                     PrescriptionHistoryCard(),
                     MySpaces.vSmallGapInBetween,
                     PrescriptionHistoryCard()
-
                   ],
                 )
               ],
