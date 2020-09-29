@@ -5,8 +5,9 @@ import 'package:soochit/pages/authentication/register.dart';
 import 'package:soochit/pages/authentication/enterOTP.dart';
 import 'package:soochit/pages/authentication/splash_page.dart';
 import 'package:soochit/pages/doctor-specific/doctorProfile.dart';
-import 'package:soochit/pages/doctor-specific/homeDoctor.dart';
+import 'package:soochit/pages/doctor-specific/doctorRegistration.dart';
 import 'package:soochit/pages/patient-specific/homePatient.dart';
+import 'package:soochit/pages/patient-specific/patientRegistration.dart';
 import 'package:soochit/stores/login_store.dart';
 import 'pages/welcome.dart';
 import 'pages/login.dart';
@@ -60,7 +61,9 @@ class _MyAppState extends State<MyApp> {
             PrescriptionHistory.id: (context) => PrescriptionHistory(),
             SamplePatientProfile.id: (context) => SamplePatientProfile(),
             HomePatient.id: (context) => HomePatient(),
-            DoctorProfile.id: (context) => DoctorProfile()
+            DoctorProfile.id: (context) => DoctorProfile(),
+            DoctorRegistration.id: (context) => DoctorRegistration(),
+            PatientRegistration.id: (context) => PatientRegistration(),
           },
         ),
       ),
