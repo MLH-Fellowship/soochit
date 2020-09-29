@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:soochit/pages/authentication//signout.dart';
+import 'package:soochit/global/myColors.dart';
+import 'package:soochit/global/myStrings.dart';
 import 'package:soochit/pages/authentication/register.dart';
+import 'package:soochit/pages/authentication/signout.dart';
 import 'package:soochit/stores/login_store.dart';
 
-class SplashPage extends StatefulWidget {
+class SplashScreen extends StatefulWidget {
   static String id="splash_page";
-  SplashPage({Key key}) : super(key: key);
+  SplashScreen({Key key}) : super(key: key);
   @override
-  _SplashPageState createState() => _SplashPageState();
+  _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _SplashPageState extends State<SplashPage> {
+class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState() {
@@ -28,7 +30,13 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+        backgroundColor: Colors.white,
+        body: Align(
+          child: Text(
+            MyStrings.appName, style: Theme.of(context).textTheme.headline3.copyWith(color: MyColors.primaryColor, fontWeight: FontWeight.bold),
+          ),
+          alignment: Alignment.center,
+        )
     );
   }
 }
