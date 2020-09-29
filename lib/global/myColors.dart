@@ -14,5 +14,4 @@ class MyColors {
 
   static const Color inputFieldPink = Color(0xFFF87277);
   static const Color inputFieldTextPink = Color(0xFFFBB5B8);
-
 }
