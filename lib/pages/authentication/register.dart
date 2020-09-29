@@ -73,8 +73,8 @@ class _RegisterState extends State<Register> {
                                           .textTheme
                                           .bodyText2
                                           .copyWith(
-                                              color: MyColors.white,
-                                              fontFamily: 'lexenddeca')),
+                                          color: MyColors.white,
+                                          fontFamily: 'lexenddeca')),
                                 ),
                               ),
                               Container(
@@ -96,11 +96,11 @@ class _RegisterState extends State<Register> {
                                         .textTheme
                                         .subtitle1
                                         .copyWith(
-                                            color: MyColors.lightestPink,
-                                            fontFamily: 'lexenddeca'),
+                                        color: MyColors.lightestPink,
+                                        fontFamily: 'lexenddeca'),
                                     controller: phoneController,
                                     clearButtonMode:
-                                        OverlayVisibilityMode.editing,
+                                    OverlayVisibilityMode.editing,
                                     keyboardType: TextInputType.phone,
                                     maxLines: 1,
                                     placeholder: MyStrings.placeholderLoginAuth,
@@ -108,8 +108,8 @@ class _RegisterState extends State<Register> {
                                         .textTheme
                                         .headline6
                                         .copyWith(fontSize: 18,
-                                            color: MyColors.inputFieldTextPink,
-                                            fontFamily: 'lexenddeca')),
+                                        color: MyColors.inputFieldTextPink,
+                                        fontFamily: 'lexenddeca')),
                               ),
                               Container(
                                 margin: EdgeInsets.symmetric(
@@ -131,9 +131,9 @@ class _RegisterState extends State<Register> {
                                             loginStore
                                                 .loginScaffoldKey.currentState
                                                 .showSnackBar(getSnackBar(
-                                                    context,
-                                                    MyStrings
-                                                        .invalidPhoneNumber));
+                                                context,
+                                                MyStrings
+                                                    .invalidPhoneNumber));
                                           }
                                         },
                                         shape: RoundedRectangleBorder(
@@ -152,10 +152,10 @@ class _RegisterState extends State<Register> {
                                                   .textTheme
                                                   .subtitle1
                                                   .copyWith(
-                                                      color:
-                                                          MyColors.lighterPink,
-                                                      fontFamily:
-                                                          'lexenddeca')),
+                                                  color:
+                                                  MyColors.lighterPink,
+                                                  fontFamily:
+                                                  'lexenddeca')),
                                         ),
                                       ),
                                     ),
