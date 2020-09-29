@@ -3,6 +3,7 @@ import 'package:soochit/global/myColors.dart';
 import 'package:soochit/global/myDimens.dart';
 import 'package:soochit/pages/doctor-specific/patientHistory.dart';
 import 'package:soochit/pages/doctor-specific/doctorProfile.dart';
+import 'package:soochit/widgets/addPatientDialog.dart';
 
 class HomeDoctor extends StatefulWidget {
   static String id = "homeDoctor";
@@ -62,7 +63,10 @@ class _HomeDoctorState extends State<HomeDoctor> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(onPressed: () {}, backgroundColor: MyColors.primaryColor, child: Icon(Icons.add, size: 40),),
+      floatingActionButton: FloatingActionButton(onPressed: () {showAddPatientDialog();}, backgroundColor: MyColors.primaryColor, child: Icon(Icons.add, size: 40),),
     );
+  }
+  Future<Dialog> showAddPatientDialog(){
+    return showDialog(context: context, builder: (BuildContext context) => AddPatientDialog());
   }
 }

@@ -127,7 +127,7 @@ class _DoctorRegistrationState extends State<DoctorRegistration> {
           .textTheme
           .subtitle1
           .copyWith(color: MyColors.lightestPink, fontFamily: 'lexenddeca'),
-      maxLines: null,
+      maxLines: 1,
       cursorColor: MyColors.white,
       cursorWidth: 3,
       cursorRadius: Radius.circular(50),
