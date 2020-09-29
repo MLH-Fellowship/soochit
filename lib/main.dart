@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:soochit/pages/authentication/signout.dart';
 import 'package:soochit/pages/authentication/register.dart';
 import 'package:soochit/pages/authentication/enterOTP.dart';
-import 'package:soochit/pages/authentication/splash_page.dart';
+import 'package:soochit/pages/authentication/splashScreen.dart';
 import 'package:soochit/pages/doctor-specific/doctorProfile.dart';
 import 'package:soochit/pages/doctor-specific/doctorRegistration.dart';
 import 'package:soochit/pages/patient-specific/homePatient.dart';
@@ -48,11 +48,11 @@ class _MyAppState extends State<MyApp> {
         child: MaterialApp(
           title: 'Soochit',
           debugShowCheckedModeBanner: false,
-          home: SplashPage(),
+          home: SplashScreen(),
           routes: {
             EnterOTP.id: (context) => EnterOTP(),
             Register.id: (context) => Register(),
-            SplashPage.id: (context) => SplashPage(),
+            SplashScreen.id: (context) => SplashScreen(),
             HomePage.id: (context) => HomePage(),
             Welcome.id: (context) => Welcome(),
             Login.id: (context) => Login(),
