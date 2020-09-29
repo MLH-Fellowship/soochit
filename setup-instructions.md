@@ -41,3 +41,4 @@ Follow the [official firebase documentation](https://firebase.google.com/docs/fl
 
 Refer to the Flutter [online documentation](https://flutter.dev/docs), which offers tutorials, samples, guidance on mobile development, and a full API reference.
 
+Huge shoutout to @anita-org's [mentorship-flutter](https://github.com/anitab-org/mentorship-flutter) for the detailed installation guide! 🚀
