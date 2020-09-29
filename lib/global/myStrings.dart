@@ -65,8 +65,9 @@ class MyStrings {
   static const searchPatientsLabel = "Search patients";
 
   // register page
-  static const nameLabel = 'Name';
-  static const hospitalNameLabel = 'Hospital Name';
-  static const hospitalAddressLabel = 'Hospital Address';
-  static const qualificationsLabel = 'Qualifications';
+  static const nameLabel = 'Full name';
+  static const hospitalNameLabel = 'Hospital name';
+  static const hospitalAddressLabel = 'Hospital address';
+  static const qualificationsLabel = 'Qualification';
+  static const uploadSignatureLabel = "Upload signature";
 }

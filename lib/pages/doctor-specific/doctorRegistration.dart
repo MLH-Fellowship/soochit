@@ -18,7 +18,8 @@ List<String> textWidgetPlaceholders = [
   MyStrings.nameLabel,
   MyStrings.hospitalNameLabel,
   MyStrings.hospitalAddressLabel,
-  MyStrings.qualificationsLabel
+  MyStrings.qualificationsLabel,
+  MyStrings.uploadSignatureLabel,
 ];
 
 class DoctorRegistration extends StatefulWidget {
@@ -64,24 +65,31 @@ class _DoctorRegistrationState extends State<DoctorRegistration> {
         child: Container(
           color: MyColors.primaryColor,
           margin: EdgeInsets.only(
-              left: MyDimens.double_40, right: MyDimens.double_40, top: MyDimens.double_100),
+              left: MyDimens.double_40, right: MyDimens.double_40, top: MyDimens.double_120),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Text(MyStrings.registerLabel,
-                  style: Theme.of(context)
-                      .textTheme
-                      .headline3
-                      .copyWith(color: MyColors.white, fontFamily: 'airbnb')),
-              MySpaces.vSmallGapInBetween,
-              _buildCupertinoTextField(0),
-              MySpaces.vSmallGapInBetween,
-              _buildCupertinoTextField(1),
-              MySpaces.vSmallGapInBetween,
-              _buildCupertinoTextField(2),
-              MySpaces.vSmallGapInBetween,
-              _buildCupertinoTextField(3),
-              MySpaces.vMediumGapInBetween,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(MyStrings.registerLabel,
+                      style: Theme.of(context)
+                          .textTheme
+                          .headline3
+                          .copyWith(color: MyColors.white, fontFamily: 'airbnb')),
+                  MySpaces.vSmallGapInBetween,
+                  _buildCupertinoTextField(0),
+                  MySpaces.vSmallGapInBetween,
+                  _buildCupertinoTextField(1),
+                  MySpaces.vSmallGapInBetween,
+                  _buildCupertinoTextField(2),
+                  MySpaces.vSmallGapInBetween,
+                  _buildCupertinoTextField(3),
+                  MySpaces.vSmallGapInBetween,
+                  _buildCupertinoTextField(4),
+                  MySpaces.vMediumGapInBetween
+                ],
+              ),
               FlatButton(
                 onPressed: () {
                   _onPressedAddDocDetails();
@@ -102,7 +110,7 @@ class _DoctorRegistrationState extends State<DoctorRegistration> {
               ),
               Padding(padding: EdgeInsets.all(MyDimens.double_200),),
             ],
-          ),
+          )
         ),
       ),
     );

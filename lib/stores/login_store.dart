@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:soochit/global/myStrings.dart';
-import 'package:soochit/pages/authentication/signout.dart';
 import 'package:soochit/pages/authentication/register.dart';
 import 'package:soochit/pages/authentication/enterOTP.dart';
 import 'package:soochit/pages/welcome.dart';
