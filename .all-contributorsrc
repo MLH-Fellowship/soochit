@@ -1,0 +1,34 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "dotrachit",
+      "name": "Rachit Gupta",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/44428198?v=4",
+      "profile": "http://rachitgupta.co",
+      "contributions": [
+        "code",
+        "design"
+      ]
+    },
+    {
+      "login": "Imperial-lord",
+      "name": "AB Satyaprakash",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/45942031?v=4",
+      "profile": "https://imperial-lord.github.io/mywebsite/",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "soochit",
+  "projectOwner": "MLH-Fellowship",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
