@@ -23,6 +23,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Ajitesh13",
+      "name": "Ajitesh Panda",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/42615579?v=4",
+      "profile": "https://bugzilla.mozilla.org/user_profile?user_id=650533",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
