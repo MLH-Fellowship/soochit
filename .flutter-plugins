@@ -1,8 +1,0 @@
-# This is a generated file; do not edit or check into version control.
-cloud_firestore=/home/imperial_lord/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.13.7/
-cloud_firestore_web=/home/imperial_lord/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore_web-0.1.1+2/
-firebase_auth=/home/imperial_lord/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.15.5+3/
-firebase_auth_web=/home/imperial_lord/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth_web-0.1.3+1/
-firebase_core=/home/imperial_lord/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.4.5/
-firebase_core_web=/home/imperial_lord/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-0.1.1+2/
-firebase_storage=/home/imperial_lord/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_storage-3.1.6/
