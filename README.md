@@ -1,6 +1,6 @@
 <p align="center">  
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-  <a href="https://github.com/MLH-Fellowship/soochit/graphs/contributors"><img src="https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square"></a>
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
  <a href="https://github.com/MLH-Fellowship/soochit/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg"></a>
   <a href="https://github.com/Solido/awesome-flutter">
@@ -43,6 +43,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="http://rachitgupta.co"><img src="https://avatars1.githubusercontent.com/u/44428198?v=4" width="100px;" alt=""/><br /><sub><b>Rachit Gupta</b></sub></a><br /><a href="https://github.com/MLH-Fellowship/soochit/commits?author=dotrachit" title="Code">💻</a> <a href="#design-dotrachit" title="Design">🎨</a></td>
+    <td align="center"><a href="https://imperial-lord.github.io/mywebsite/"><img src="https://avatars0.githubusercontent.com/u/45942031?v=4" width="100px;" alt=""/><br /><sub><b>AB Satyaprakash</b></sub></a><br /><a href="https://github.com/MLH-Fellowship/soochit/commits?author=Imperial-lord" title="Code">💻</a></td>
   </tr>
 </table>
 
