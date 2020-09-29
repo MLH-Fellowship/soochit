@@ -1,6 +1,6 @@
 <p align="center">  
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+  <a href="https://github.com/MLH-Fellowship/soochit/graphs/contributors"><img src="https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square"></a>
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
  <a href="https://github.com/MLH-Fellowship/soochit/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg"></a>
   <a href="https://github.com/Solido/awesome-flutter">
