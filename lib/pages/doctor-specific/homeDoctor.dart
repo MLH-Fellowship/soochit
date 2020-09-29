@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:soochit/global/myColors.dart';
 import 'package:soochit/global/myDimens.dart';
+import 'package:soochit/pages/authentication/signout.dart';
 import 'package:soochit/pages/doctor-specific/patientHistory.dart';
 import 'package:soochit/pages/doctor-specific/doctorProfile.dart';
 import 'package:soochit/widgets/addPatientDialog.dart';
 
 class HomeDoctor extends StatefulWidget {
   static String id = "homeDoctor";
+
   @override
   _HomeDoctorState createState() => _HomeDoctorState();
 }
@@ -15,12 +17,8 @@ class _HomeDoctorState extends State<HomeDoctor> {
   int pageIndex = 0;
   int firstIconColorInt = 0;
   int secondIconColorInt = 1;
-  List _currentPage = [
-    PatientHistory(), DoctorProfile()
-  ];
-  List _iconColors = [
-    MyColors.white, MyColors.lightPink
-  ];
+  List _currentPage = [PatientHistory(), DoctorProfile()];
+  List _iconColors = [MyColors.white, MyColors.lightPink];
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +29,9 @@ class _HomeDoctorState extends State<HomeDoctor> {
         actions: [
           Padding(
             padding: EdgeInsets.only(right: MyDimens.double_10),
-            child: Icon(Icons.more_vert, size: MyDimens.double_30),
+            child: GestureDetector(
+                onTap: () => Navigator.pushNamed(context, HomePage.id),
+                child: Icon(Icons.more_vert, size: MyDimens.double_30)),
           )
         ],
       ),
@@ -46,16 +46,30 @@ class _HomeDoctorState extends State<HomeDoctor> {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                IconButton(icon: Icon(Icons.history, color: _iconColors[firstIconColorInt],), onPressed: () {setState(() {
-                  pageIndex = 0;
-                  firstIconColorInt = 0;
-                  secondIconColorInt = 1;
-                });},),
-                IconButton(icon: Icon(Icons.person, color: _iconColors[secondIconColorInt]), onPressed: () {setState(() {
-                  pageIndex = 1;
-                  firstIconColorInt = 1;
-                  secondIconColorInt = 0;
-                });},),
+                IconButton(
+                  icon: Icon(
+                    Icons.history,
+                    color: _iconColors[firstIconColorInt],
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      pageIndex = 0;
+                      firstIconColorInt = 0;
+                      secondIconColorInt = 1;
+                    });
+                  },
+                ),
+                IconButton(
+                  icon: Icon(Icons.person,
+                      color: _iconColors[secondIconColorInt]),
+                  onPressed: () {
+                    setState(() {
+                      pageIndex = 1;
+                      firstIconColorInt = 1;
+                      secondIconColorInt = 0;
+                    });
+                  },
+                ),
               ],
             ),
           ),
@@ -63,10 +77,19 @@ class _HomeDoctorState extends State<HomeDoctor> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(onPressed: () {showAddPatientDialog();}, backgroundColor: MyColors.primaryColor, child: Icon(Icons.add, size: 40),),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showAddPatientDialog();
+        },
+        backgroundColor: MyColors.primaryColor,
+        child: Icon(Icons.add, size: 40),
+      ),
     );
   }
-  Future<Dialog> showAddPatientDialog(){
-    return showDialog(context: context, builder: (BuildContext context) => AddPatientDialog());
+
+  Future<Dialog> showAddPatientDialog() {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) => AddPatientDialog());
   }
 }

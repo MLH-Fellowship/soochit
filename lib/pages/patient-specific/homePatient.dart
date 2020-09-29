@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:soochit/global/myColors.dart';
 import 'package:soochit/global/myDimens.dart';
+import 'package:soochit/pages/authentication/signout.dart';
 import 'package:soochit/pages/patient-specific/medicineDeadlines.dart';
 import 'package:soochit/pages/patient-specific/prescriptionHistory.dart';
 
@@ -30,7 +31,9 @@ class _HomePatientState extends State<HomePatient> {
         actions: [
           Padding(
             padding: EdgeInsets.only(right: MyDimens.double_10),
-            child: Icon(Icons.more_vert, size: MyDimens.double_30),
+            child: GestureDetector(
+              onTap: ()=> Navigator.pushNamed(context, HomePage.id),
+                child: Icon(Icons.more_vert, size: MyDimens.double_30)),
           )
         ],
       ),

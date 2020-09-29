@@ -16,7 +16,7 @@ class AddPatientDialog extends StatelessWidget {
       elevation: 0.0,
       backgroundColor: MyColors.primaryColor,
       child: Container(
-        height: MediaQuery.of(context).size.height*0.22,
+        height: MediaQuery.of(context).size.height*0.30,
         margin: EdgeInsets.all(20),
         color: MyColors.primaryColor,
         child: Column(
@@ -69,7 +69,7 @@ class AddPatientDialog extends StatelessWidget {
                   },
                   color: MyColors.white,
                   child: Text(
-                    MyStrings.confirmLabel, style: Theme.of(context).textTheme.bodyText1.copyWith(color: MyColors.primaryColor, fontSize: MyDimens.double_17, fontFamily: 'lexendeca'),
+                    MyStrings.confirmLabel, style: Theme.of(context).textTheme.bodyText1.copyWith(color: MyColors.primaryColor, fontSize: MyDimens.double_15, fontFamily: 'lexendeca'),
                   ),
                 )
               ],

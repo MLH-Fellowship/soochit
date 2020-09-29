@@ -16,7 +16,7 @@ class PreviousPatientCard extends StatelessWidget {
       child: Container(
           padding: EdgeInsets.symmetric(horizontal: MyDimens.double_30),
           height: MyDimens.double_70,
-          width: MediaQuery.of(context).size.width*0.80,
+          width: MediaQuery.of(context).size.width*0.90,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(MyDimens.double_7),
             color: MyColors.lightestPink,
