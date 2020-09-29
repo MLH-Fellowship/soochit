@@ -5,7 +5,6 @@ import 'package:soochit/global/myStrings.dart';
 import 'package:soochit/pages/authentication/signout.dart';
 import 'package:soochit/pages/authentication/register.dart';
 import 'package:soochit/pages/authentication/enterOTP.dart';
-import 'package:soochit/pages/welcome.dart';
 import 'package:soochit/widgets/snackbar.dart';
 
 part 'login_store.g.dart';
@@ -104,8 +103,8 @@ abstract class LoginStoreBase with Store {
     firebaseUser = result.user;
 
     Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute(builder: (_) => Welcome(user: firebaseUser)),
-            (Route<dynamic> route) => false);
+        MaterialPageRoute(builder: (_) => HomePage()),
+        (Route<dynamic> route) => false);
 
     isLoginLoading = false;
     isOtpLoading = false;
@@ -116,7 +115,7 @@ abstract class LoginStoreBase with Store {
     await _auth.signOut();
     await Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(builder: (_) => Register()),
-            (Route<dynamic> route) => false);
+        (Route<dynamic> route) => false);
     firebaseUser = null;
   }
 }

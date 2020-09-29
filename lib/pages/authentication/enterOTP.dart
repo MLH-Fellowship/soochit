@@ -37,12 +37,12 @@ class _EnterOTPState extends State<EnterOTP> {
             borderRadius: BorderRadius.all(Radius.circular(MyDimens.double_4))),
         child: Center(
             child: Text(
-              text[position],
-              style: Theme.of(context)
-                  .textTheme
-                  .headline6
-                  .copyWith(color: MyColors.lightestPink, fontFamily: 'lexenddeca'),
-            )),
+          text[position],
+          style: Theme.of(context)
+              .textTheme
+              .headline6
+              .copyWith(color: MyColors.lightestPink, fontFamily: 'lexenddeca'),
+        )),
       );
     } catch (e) {
       return Container(
@@ -72,7 +72,7 @@ class _EnterOTPState extends State<EnterOTP> {
                     padding: EdgeInsets.all(MyDimens.double_10),
                     decoration: BoxDecoration(
                       borderRadius:
-                      BorderRadius.all(Radius.circular(MyDimens.double_20)),
+                          BorderRadius.all(Radius.circular(MyDimens.double_20)),
                       color: MyColors.lightestPink,
                     ),
                     child: Icon(
@@ -95,41 +95,41 @@ class _EnterOTPState extends State<EnterOTP> {
                         children: <Widget>[
                           Expanded(
                             child: SingleChildScrollView(
-                                child: Padding(
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Container(
-                                        margin: EdgeInsets.all(MyDimens.double_20),
-                                        child: Align(
-                                          alignment: Alignment.centerLeft,
-                                          child: Text(MyStrings.otpRequest,
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .bodyText2
-                                                  .copyWith(
-                                                  color: MyColors.white,
-                                                  fontFamily: 'lexenddeca')),
-                                        ),
+                              child: Padding(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Container(
+                                      margin: EdgeInsets.all(MyDimens.double_20),
+                                      child: Align(
+                                        alignment: Alignment.centerLeft,
+                                        child: Text(MyStrings.otpRequest,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodyText2
+                                                .copyWith(
+                                                color: MyColors.white,
+                                                fontFamily: 'lexenddeca')),
                                       ),
-                                      Container(
-                                        constraints: BoxConstraints(maxWidth: MyDimens.double_600),
-                                        child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                          children: <Widget>[
-                                            otpNumberWidget(0),
-                                            otpNumberWidget(1),
-                                            otpNumberWidget(2),
-                                            otpNumberWidget(3),
-                                            otpNumberWidget(4),
-                                            otpNumberWidget(5),
-                                          ],
-                                        ),
+                                    ),
+                                    Container(
+                                      constraints: BoxConstraints(maxWidth: MyDimens.double_600),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                        children: <Widget>[
+                                          otpNumberWidget(0),
+                                          otpNumberWidget(1),
+                                          otpNumberWidget(2),
+                                          otpNumberWidget(3),
+                                          otpNumberWidget(4),
+                                          otpNumberWidget(5),
+                                        ],
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
+                                ),
                                   padding: EdgeInsets.symmetric(vertical: MyDimens.double_100),
-                                )
+                              )
                             ),
                           ),
                           Container(
@@ -145,7 +145,7 @@ class _EnterOTPState extends State<EnterOTP> {
                                     },
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
-                                        BorderRadius.circular(MyDimens.double_4)),
+                                            BorderRadius.circular(MyDimens.double_4)),
                                     borderSide: BorderSide(
                                         color: MyColors.lighterPink,
                                         width: MyDimens.double_1),
@@ -159,8 +159,8 @@ class _EnterOTPState extends State<EnterOTP> {
                                               .textTheme
                                               .subtitle1
                                               .copyWith(
-                                              color: MyColors.lighterPink,
-                                              fontFamily: 'lexenddeca')),
+                                                  color: MyColors.lighterPink,
+                                                  fontFamily: 'lexenddeca')),
                                     ),
                                   ),
                                 ),
