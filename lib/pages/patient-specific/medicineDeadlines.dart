@@ -26,7 +26,7 @@ class _MedicineDeadlinesState extends State<MedicineDeadlines> {
         .get()
         .then((value) {
       currentUsername = value.data['name'] + "'s Medical Deadlines";
-      print(currentUsername);
+      // print(currentUsername);
       return currentUsername;
     });
   }
@@ -41,31 +41,65 @@ class _MedicineDeadlinesState extends State<MedicineDeadlines> {
         child: Container(
           margin: EdgeInsets.symmetric(
               vertical: MyDimens.double_10, horizontal: MyDimens.double_30),
-          child: Column(
-            children: [
-              MySpaces.vMediumGapInBetween,
-              Text(
-                currentUsername,
-                style: Theme.of(context).textTheme.headline4.copyWith(
-                    color: MyColors.primaryColor, fontFamily: 'airbnb'),
-              ),
-              MySpaces.vLargeGapInBetween,
-              Column(
-                children: [
-                  MedicineDeadlineReminder(),
-                  MySpaces.vMediumGapInBetween,
-                  MedicineDeadlineReminder(),
-                  MySpaces.vMediumGapInBetween,
-                  MedicineDeadlineReminder(),
-                  MySpaces.vMediumGapInBetween,
-                  MedicineDeadlineReminder(),
-                  MySpaces.vMediumGapInBetween,
-                  MedicineDeadlineReminder(),
-                  MySpaces.vMediumGapInBetween,
-                ],
-              )
-            ],
-          ),
+          child: StreamBuilder(
+              stream: Firestore.instance
+                  .collection('Medicine')
+                  .document('J9L00wEPDkWtEf2YlDV7')
+                  .snapshots(),
+              builder: (context, snapshot) {
+                final DocumentSnapshot ds = snapshot.data;
+                final Map<String, dynamic> map = ds.data;
+
+                var timeList = new List();
+                map.forEach((key, value) {
+                  for (var item in map[key]) {
+                    timeList.add(item);
+                  }
+                });
+                var rendermap = new Map();
+                for (int i = 0; i < timeList.length; i++) {
+                  rendermap[timeList.toList()[i]] = [];
+                }
+                rendermap.forEach((key, value) {
+                  var medlist = new List();
+                  map.forEach((key1, value1) {
+                    for (var item in map[key1]) {
+                      if (item == key) {
+                        medlist.add(key1);
+                        // print(key1);
+                      }
+                    }
+                  });
+                  rendermap[key] = medlist;
+                });
+                print(rendermap);
+
+                return Column(
+                  children: [
+                    MySpaces.vMediumGapInBetween,
+                    Text(
+                      currentUsername,
+                      style: Theme.of(context).textTheme.headline4.copyWith(
+                          color: MyColors.primaryColor, fontFamily: 'airbnb'),
+                    ),
+                    MySpaces.vLargeGapInBetween,
+                    Column(
+                      children: [
+                        MedicineDeadlineReminder(),
+                        MySpaces.vMediumGapInBetween,
+                        MedicineDeadlineReminder(),
+                        MySpaces.vMediumGapInBetween,
+                        MedicineDeadlineReminder(),
+                        MySpaces.vMediumGapInBetween,
+                        MedicineDeadlineReminder(),
+                        MySpaces.vMediumGapInBetween,
+                        MedicineDeadlineReminder(),
+                        MySpaces.vMediumGapInBetween,
+                      ],
+                    )
+                  ],
+                );
+              }),
         ),
       )),
     );
