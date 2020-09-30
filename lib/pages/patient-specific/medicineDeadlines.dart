@@ -49,7 +49,6 @@ class _MedicineDeadlinesState extends State<MedicineDeadlines> {
               builder: (context, snapshot) {
                 final DocumentSnapshot ds = snapshot.data;
                 final Map<String, dynamic> map = ds.data;
-
                 var timeList = new List();
                 map.forEach((key, value) {
                   for (var item in map[key]) {
