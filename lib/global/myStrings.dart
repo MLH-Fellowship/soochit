@@ -50,7 +50,7 @@ class MyStrings {
   // >>>>>>>>>>>>>>>>>>>> DOCTOR >>>>>>>>>>>>>>>>>>>>
 
   // home
-  static const doctorPreviousPatients = "$doctorName's Previous Patients";
+  static const doctorPreviousPatients = "'s Previous Patients";
   static const recentAppointmentDate = "2nd Oct";
 
   // FAB
