@@ -25,7 +25,7 @@ class MedicineDeadlineReminder extends StatelessWidget {
             ),
             child: Align(
               child: Text(
-                'time',
+                time,
                 style: Theme.of(context)
                     .textTheme
                     .subtitle1
@@ -48,7 +48,7 @@ class MedicineDeadlineReminder extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'medName',
+                      medName,
                       style: Theme.of(context).textTheme.headline6.copyWith(
                           color: MyColors.black, fontFamily: 'lexenddeca'),
                     ),
@@ -57,6 +57,7 @@ class MedicineDeadlineReminder extends StatelessWidget {
                 ),
               ],
             )),
+        MySpaces.vMediumGapInBetween,
       ],
     );
   }

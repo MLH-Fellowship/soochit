@@ -56,6 +56,7 @@ class _MedicineDeadlinesState extends State<MedicineDeadlines> {
                     timeList.add(item);
                   }
                 });
+                print(timeList);
                 var rendermap = new Map();
                 for (int i = 0; i < timeList.length; i++) {
                   rendermap[timeList.toList()[i]] = [];
@@ -84,17 +85,17 @@ class _MedicineDeadlinesState extends State<MedicineDeadlines> {
                     ),
                     MySpaces.vLargeGapInBetween,
                     Column(
-                      children: [
-                        MedicineDeadlineReminder(),
-                        MySpaces.vMediumGapInBetween,
-                        MedicineDeadlineReminder(),
-                        MySpaces.vMediumGapInBetween,
-                        MedicineDeadlineReminder(),
-                        MySpaces.vMediumGapInBetween,
-                        MedicineDeadlineReminder(),
-                        MySpaces.vMediumGapInBetween,
-                        MedicineDeadlineReminder(),
-                        MySpaces.vMediumGapInBetween,
+                      children: <Widget>[
+                        for (var item in timeList)
+                          Column(
+                            children: <Widget>[
+                              for (int i = 0; i < 1; i++)
+                                MedicineDeadlineReminder(
+                                  medName: rendermap[item][i],
+                                  time: item,
+                                ),
+                            ],
+                          )
                       ],
                     )
                   ],
