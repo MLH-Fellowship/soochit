@@ -24,7 +24,7 @@ class MyStrings {
   static const invalidPhoneNumberFormat = 'The phone number format is incorrect. Please enter your number in E.164 format i.e. [+][country code][number]';
   static const incorrectOTP = 'Incorrect OTP. Please enter the last code received.';
 
-  //dummy data
+  // dummy data
   static const patientName = "Rachit Gupta";
   static const paracetamolLabel = "Paracetamol";
   static const crocinLabel = "Crocin";
@@ -38,27 +38,27 @@ class MyStrings {
 
   // >>>>>>>>>>>>>>>>>>>> PATIENT >>>>>>>>>>>>>>>>>>>>
 
-  //home
+  // home
   static const patientMedDeadlines = "$patientName's Medical Deadlines";
   static const genderLabel = 'Gender';
   static const addressLabel = 'Address';
 
-  //prescription history
+  // prescription history
   static const patientPrescriptionHistoryLabel =
       "$patientName's Prescription History";
 
   // >>>>>>>>>>>>>>>>>>>> DOCTOR >>>>>>>>>>>>>>>>>>>>
 
-  //home
+  // home
   static const doctorPreviousPatients = "$doctorName's Previous Patients";
   static const recentAppointmentDate = "2nd Oct";
 
-  //FAB
+  // FAB
   static const addAPatientLabel = "Add a patient";
   static const cancelLabel = "Cancel";
   static const confirmLabel = "Confirm";
 
-  //patient's profile (doctor's pov)
+  // patient's profile (doctor's pov)
   static const ageLabel = "Age";
   static const phoneNumberLabel = "Phone number";
   static const sampleAge = "21";
@@ -72,4 +72,13 @@ class MyStrings {
   static const hospitalAddressLabel = 'Hospital address';
   static const qualificationsLabel = 'Qualification';
   static const uploadSignatureLabel = 'Upload signature';
+
+  // prescription
+  static const prescriptionLabel = "Prescription";
+  static const problemLabel = "Problem";
+  static const descriptionOptionalLabel = "Description (Optional)";
+  static const sampleMedName = "Paracetamol";
+  static const sampleMedTime = "7AM and 8PM";
+  static const medicineNameLabel = "Medicine name";
+  static const timingsLabel = "Timings";
 }

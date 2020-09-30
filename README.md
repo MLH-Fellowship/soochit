@@ -29,6 +29,8 @@ Soochit: a fullly automated e-prescription tracker and medicine reminder.
 ## Unique Selling Point (USP)
 it is a medicine reminder app, but you don't have to set reminders for your medicines. 😉
 
+## Getting Started
+In order to setup the project locally, check the defined setup instructions [here](/setup-instructions.md).
 
 ## Contributors ✨
 

@@ -26,7 +26,7 @@ class _MedicineDeadlinesState extends State<MedicineDeadlines> {
         .get()
         .then((value) {
       currentUsername = value.data['name'] + "'s Medical Deadlines";
-      // print(currentUsername);
+      print(currentUsername);
       return currentUsername;
     });
   }
