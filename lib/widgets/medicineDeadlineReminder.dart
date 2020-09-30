@@ -34,7 +34,8 @@ class MedicineDeadlineReminder extends StatelessWidget {
               alignment: Alignment.center,
             )),
         Container(
-            padding: EdgeInsets.symmetric(horizontal: MyDimens.double_30),
+            padding: EdgeInsets.symmetric(horizontal: MyDimens.double_35, vertical: MyDimens.double_10),
+            width: MediaQuery.of(context).size.width * 0.80,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(MyDimens.double_10),
