@@ -62,6 +62,7 @@ class _MyAppState extends State<MyApp> {
             PrescriptionHistory.id: (context) => PrescriptionHistory(),
             SamplePatientProfile.id: (context) => SamplePatientProfile(),
             HomePatient.id: (context) => HomePatient(),
+            HomeDoctor.id: (context) => HomeDoctor(),
             DoctorProfile.id: (context) => DoctorProfile(),
             DoctorRegistration.id: (context) => DoctorRegistration(),
             PatientRegistration.id: (context) => PatientRegistration(),

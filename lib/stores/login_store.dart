@@ -1,9 +1,12 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:soochit/global/myStrings.dart';
 import 'package:soochit/pages/authentication/register.dart';
 import 'package:soochit/pages/authentication/enterOTP.dart';
+import 'package:soochit/pages/doctor-specific/homeDoctor.dart';
+import 'package:soochit/pages/patient-specific/homePatient.dart';
 import 'package:soochit/pages/welcome.dart';
 import 'package:soochit/widgets/snackbar.dart';
 
@@ -102,9 +105,22 @@ abstract class LoginStoreBase with Store {
 
     firebaseUser = result.user;
 
-    Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute(builder: (_) => Welcome(user: firebaseUser)),
-            (Route<dynamic> route) => false);
+    var collectionDoc = Firestore.instance.collection('Doctor');
+    var collectionPat = Firestore.instance.collection('Patient');
+    var docDoc = await collectionDoc.document(firebaseUser.uid).get();
+    var docPat = await collectionPat.document(firebaseUser.uid).get();
+    if (docDoc.exists)
+      Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(builder: (_) => HomeDoctor()),
+          (Route<dynamic> route) => false);
+    else if (docPat.exists)
+      Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(builder: (_) => HomePatient()),
+          (Route<dynamic> route) => false);
+    else
+      Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(builder: (_) => Welcome(user: firebaseUser)),
+          (Route<dynamic> route) => false);
 
     isLoginLoading = false;
     isOtpLoading = false;
@@ -115,7 +131,7 @@ abstract class LoginStoreBase with Store {
     await _auth.signOut();
     await Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(builder: (_) => Register()),
-            (Route<dynamic> route) => false);
+        (Route<dynamic> route) => false);
     firebaseUser = null;
   }
 }
