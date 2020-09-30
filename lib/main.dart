@@ -7,6 +7,7 @@ import 'package:soochit/pages/authentication/splashScreen.dart';
 import 'package:soochit/pages/doctor-specific/doctorProfile.dart';
 import 'package:soochit/pages/doctor-specific/doctorRegistration.dart';
 import 'package:soochit/pages/doctor-specific/homeDoctor.dart';
+import 'package:soochit/pages/doctor-specific/prescription.dart';
 import 'package:soochit/pages/patient-specific/homePatient.dart';
 import 'package:soochit/pages/patient-specific/patientRegistration.dart';
 import 'package:soochit/stores/login_store.dart';
@@ -66,6 +67,7 @@ class _MyAppState extends State<MyApp> {
             DoctorProfile.id: (context) => DoctorProfile(),
             DoctorRegistration.id: (context) => DoctorRegistration(),
             PatientRegistration.id: (context) => PatientRegistration(),
+            Prescription.id: (context) => Prescription(),
           },
         ),
       ),

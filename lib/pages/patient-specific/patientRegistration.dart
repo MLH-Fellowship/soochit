@@ -6,7 +6,6 @@ import 'package:soochit/global/myDimens.dart';
 import 'package:soochit/global/myColors.dart';
 import 'package:soochit/global/mySpaces.dart';
 import 'package:soochit/global/myStrings.dart';
-import 'package:soochit/pages/authentication/signout.dart';
 import 'package:soochit/pages/patient-specific/homePatient.dart';
 
 // Patient's details -> now in array
