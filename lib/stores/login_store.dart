@@ -42,6 +42,12 @@ abstract class LoginStoreBase with Store {
   }
 
   @action
+  Future<String> uidOfUser() async{
+      firebaseUser = await _auth.currentUser();
+      return firebaseUser.uid;
+  }
+
+  @action
   Future<void> getCodeWithPhoneNumber(
       BuildContext context, String phoneNumber) async {
     isLoginLoading = true;
@@ -111,7 +117,7 @@ abstract class LoginStoreBase with Store {
     var docPat = await collectionPat.document(firebaseUser.uid).get();
     if (docDoc.exists)
       Navigator.of(context).pushAndRemoveUntil(
-          MaterialPageRoute(builder: (_) => HomeDoctor()),
+          MaterialPageRoute(builder: (_) => HomeDoctor(user: firebaseUser)),
           (Route<dynamic> route) => false);
     else if (docPat.exists)
       Navigator.of(context).pushAndRemoveUntil(
