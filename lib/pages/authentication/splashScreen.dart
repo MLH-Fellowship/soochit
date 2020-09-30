@@ -5,7 +5,6 @@ import 'package:provider/provider.dart';
 import 'package:soochit/global/myColors.dart';
 import 'package:soochit/global/myStrings.dart';
 import 'package:soochit/pages/authentication/register.dart';
-import 'package:soochit/pages/authentication/signout.dart';
 import 'package:soochit/pages/doctor-specific/homeDoctor.dart';
 import 'package:soochit/pages/patient-specific/homePatient.dart';
 import 'package:soochit/stores/login_store.dart';
