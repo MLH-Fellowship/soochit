@@ -93,7 +93,6 @@ class _HomeDoctorState extends State<HomeDoctor> {
       ),
     );
   }
-
   Future<Dialog> showAddPatientDialog() {
     return showDialog(
         context: context,

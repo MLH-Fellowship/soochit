@@ -17,12 +17,14 @@ class MedicineDeadlines extends StatefulWidget {
 class _MedicineDeadlinesState extends State<MedicineDeadlines> {
   FirebaseUser user;
   String currentUsername;
+  String userUID;
 
   Future<String> getName() async {
     var firebaseUser = await FirebaseAuth.instance.currentUser();
+    userUID = firebaseUser.uid;
     Firestore.instance
         .collection('Patient')
-        .document(firebaseUser.uid)
+        .document(userUID)
         .get()
         .then((value) {
       currentUsername = value.data['name'] + "'s Medical Deadlines";
@@ -44,36 +46,11 @@ class _MedicineDeadlinesState extends State<MedicineDeadlines> {
           child: StreamBuilder(
               stream: Firestore.instance
                   .collection('Medicine')
-                  .document('J9L00wEPDkWtEf2YlDV7')
+                  .document(userUID)
                   .snapshots(),
               builder: (context, snapshot) {
                 final DocumentSnapshot ds = snapshot.data;
                 final Map<String, dynamic> map = ds.data;
-                var timeList = new List();
-                map.forEach((key, value) {
-                  for (var item in map[key]) {
-                    timeList.add(item);
-                  }
-                });
-                print(timeList);
-                var rendermap = new Map();
-                for (int i = 0; i < timeList.length; i++) {
-                  rendermap[timeList.toList()[i]] = [];
-                }
-                rendermap.forEach((key, value) {
-                  var medlist = new List();
-                  map.forEach((key1, value1) {
-                    for (var item in map[key1]) {
-                      if (item == key) {
-                        medlist.add(key1);
-                        // print(key1);
-                      }
-                    }
-                  });
-                  rendermap[key] = medlist;
-                });
-                print(rendermap);
-
                 return Column(
                   children: [
                     MySpaces.vMediumGapInBetween,
@@ -84,18 +61,7 @@ class _MedicineDeadlinesState extends State<MedicineDeadlines> {
                     ),
                     MySpaces.vLargeGapInBetween,
                     Column(
-                      children: <Widget>[
-                        for (var item in timeList)
-                          Column(
-                            children: <Widget>[
-                              for (int i = 0; i < 1; i++)
-                                MedicineDeadlineReminder(
-                                  medName: rendermap[item][i],
-                                  time: item,
-                                ),
-                            ],
-                          )
-                      ],
+                      children: map.entries.map((MapEntry entry) => MedicineDeadlineReminder(medName: entry.value,time: entry.key)).toList(),
                     )
                   ],
                 );
