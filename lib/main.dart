@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:soochit/pages/authentication/signout.dart';
 import 'package:soochit/pages/authentication/register.dart';
 import 'package:soochit/pages/authentication/enterOTP.dart';
 import 'package:soochit/pages/authentication/splashScreen.dart';
@@ -55,7 +54,6 @@ class _MyAppState extends State<MyApp> {
             EnterOTP.id: (context) => EnterOTP(),
             Register.id: (context) => Register(),
             SplashScreen.id: (context) => SplashScreen(),
-            HomePage.id: (context) => HomePage(),
             Welcome.id: (context) => Welcome(),
             Login.id: (context) => Login(),
             PatientHistory.id: (context) => PatientHistory(),
