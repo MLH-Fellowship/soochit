@@ -81,4 +81,5 @@ class MyStrings {
   static const sampleMedTime = "7AM and 8PM";
   static const medicineNameLabel = "Medicine name";
   static const timingsLabel = "Timings";
+  static const addAMedicineLabel = "Add a medicine";
 }

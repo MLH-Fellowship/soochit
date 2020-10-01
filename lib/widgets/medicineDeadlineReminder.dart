@@ -7,7 +7,7 @@ import 'package:soochit/global/mySpaces.dart';
 
 class MedicineDeadlineReminder extends StatelessWidget {
   String time;
-  String medName;
+  List medName;
   MedicineDeadlineReminder({@required this.medName, @required this.time});
 
   @override
@@ -48,12 +48,13 @@ class MedicineDeadlineReminder extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      medName,
-                      style: Theme.of(context).textTheme.headline6.copyWith(
-                          color: MyColors.black, fontFamily: 'lexenddeca'),
-                    ),
-                    MySpaces.vSmallestGapInBetween,
+                    for (var i=0; i<medName.length; i++)
+                      Text(
+                        medName[i],
+                        style: Theme.of(context).textTheme.headline6.copyWith(
+                            color: MyColors.black, fontFamily: 'lexenddeca'),
+                      ),
+                      MySpaces.vSmallestGapInBetween,
                   ],
                 ),
               ],
