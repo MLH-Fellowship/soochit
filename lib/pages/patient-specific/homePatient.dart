@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:soochit/global/myColors.dart';
 import 'package:soochit/global/myDimens.dart';
-import 'package:soochit/pages/authentication/signout.dart';
+import 'package:soochit/pages/authentication/signout-function.dart';
+import 'package:soochit/pages/authentication/splashScreen.dart';
 import 'package:soochit/pages/patient-specific/medicineDeadlines.dart';
 import 'package:soochit/pages/patient-specific/prescriptionHistory.dart';
 import 'package:soochit/widgets/addMedicineDialog.dart';
@@ -25,6 +26,13 @@ class _HomePatientState extends State<HomePatient> {
 
   @override
   Widget build(BuildContext context) {
+    void handleClick(String value) {
+      switch (value) {
+        case 'Logout':
+          Auth.logout();
+          Navigator.pushNamed(context, SplashScreen.id);
+      }
+    }
     return Scaffold(
       body: _currentPage[pageIndex],
       appBar: AppBar(
@@ -32,9 +40,17 @@ class _HomePatientState extends State<HomePatient> {
         actions: [
           Padding(
             padding: EdgeInsets.only(right: MyDimens.double_10),
-            child: GestureDetector(
-              onTap: ()=> Navigator.pushNamed(context, HomePage.id),
-                child: Icon(Icons.more_vert, size: MyDimens.double_30)),
+            child: PopupMenuButton<String>(
+              onSelected: handleClick,
+              itemBuilder: (BuildContext context) {
+                return {'Logout'}.map((String choice) {
+                  return PopupMenuItem<String>(
+                    value: choice,
+                    child: Text(choice),
+                  );
+                }).toList();
+              },
+            ),
           )
         ],
       ),
