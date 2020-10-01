@@ -18,7 +18,7 @@
 
 <!--Provide logs for the crash here-->
 
-## Device and Android version
+## Device and OS version
 
 <!--What make and model device (e.g., Samsung Galaxy S3) did you encounter this on?  What Android
 version (e.g., Android 4.0 Ice Cream Sandwich or Android 6.0 Marshmallow) are you running?  Is it

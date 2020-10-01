@@ -72,6 +72,7 @@ class MyStrings {
   static const hospitalAddressLabel = 'Hospital address';
   static const qualificationsLabel = 'Qualification';
   static const uploadSignatureLabel = 'Upload signature';
+  static const signatureLabel = 'Signature';
 
   // prescription
   static const prescriptionLabel = "Prescription";
@@ -81,4 +82,5 @@ class MyStrings {
   static const sampleMedTime = "7AM and 8PM";
   static const medicineNameLabel = "Medicine name";
   static const timingsLabel = "Timings";
+  static const addAMedicineLabel = "Add a medicine";
 }

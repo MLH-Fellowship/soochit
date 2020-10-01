@@ -17,12 +17,14 @@ class MedicineDeadlines extends StatefulWidget {
 class _MedicineDeadlinesState extends State<MedicineDeadlines> {
   FirebaseUser user;
   String currentUsername;
+  String userUID;
 
   Future<String> getName() async {
     var firebaseUser = await FirebaseAuth.instance.currentUser();
+    userUID = firebaseUser.uid;
     Firestore.instance
         .collection('Patient')
-        .document(firebaseUser.uid)
+        .document(userUID)
         .get()
         .then((value) {
       currentUsername = value.data['name'] + "'s Medical Deadlines";
@@ -41,31 +43,29 @@ class _MedicineDeadlinesState extends State<MedicineDeadlines> {
         child: Container(
           margin: EdgeInsets.symmetric(
               vertical: MyDimens.double_10, horizontal: MyDimens.double_30),
-          child: Column(
-            children: [
-              MySpaces.vMediumGapInBetween,
-              Text(
-                currentUsername,
-                style: Theme.of(context).textTheme.headline4.copyWith(
-                    color: MyColors.primaryColor, fontFamily: 'airbnb'),
-              ),
-              MySpaces.vLargeGapInBetween,
-              Column(
-                children: [
-                  MedicineDeadlineReminder(),
-                  MySpaces.vMediumGapInBetween,
-                  MedicineDeadlineReminder(),
-                  MySpaces.vMediumGapInBetween,
-                  MedicineDeadlineReminder(),
-                  MySpaces.vMediumGapInBetween,
-                  MedicineDeadlineReminder(),
-                  MySpaces.vMediumGapInBetween,
-                  MedicineDeadlineReminder(),
-                  MySpaces.vMediumGapInBetween,
-                ],
-              )
-            ],
-          ),
+          child: StreamBuilder(
+              stream: Firestore.instance
+                  .collection('Medicine')
+                  .document(userUID)
+                  .snapshots(),
+              builder: (context, snapshot) {
+                final DocumentSnapshot ds = snapshot.data;
+                final Map<String, dynamic> map = ds.data;
+                return Column(
+                  children: [
+                    MySpaces.vMediumGapInBetween,
+                    Text(
+                      currentUsername,
+                      style: Theme.of(context).textTheme.headline4.copyWith(
+                          color: MyColors.primaryColor, fontFamily: 'airbnb'),
+                    ),
+                    MySpaces.vLargeGapInBetween,
+                    Column(
+                      children: map.entries.map((MapEntry entry) => MedicineDeadlineReminder(medName: entry.value,time: entry.key)).toList(),
+                    )
+                  ],
+                );
+              }),
         ),
       )),
     );
