@@ -72,6 +72,7 @@ class MyStrings {
   static const hospitalAddressLabel = 'Hospital address';
   static const qualificationsLabel = 'Qualification';
   static const uploadSignatureLabel = 'Upload signature';
+  static const signatureLabel = 'Signature';
 
   // prescription
   static const prescriptionLabel = "Prescription";
