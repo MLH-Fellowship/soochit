@@ -5,8 +5,27 @@ import 'package:path_provider/path_provider.dart';
 import 'package:flutter/material.dart' as material;
 import 'package:soochit/global/myDimens.dart';
 import 'package:soochit/pages/pdf/pdfViewer.dart';
+import 'package:soochit/pages/prescriptionDetailsFromFirestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 reportView(context) async {
+  String patientUID;
+  String doctorUID;
+
+  var firebaseUser = await FirebaseAuth.instance.currentUser();
+  var collectionRef = Firestore.instance.collection('Doctor');
+  var doc = await collectionRef.document(firebaseUser.uid).get();
+  if(doc.exists){
+    doctorUID = firebaseUser.uid;
+    patientUID = 'iPf8DrsQ2HTi4JA2LLhvSdaEab72';
+  }
+  else{
+    patientUID = firebaseUser.uid;
+  }
+
+
+  PrescriptionDetailsFromFirestore.getPrescriptionDetails(patientUID, doctorUID);
   final Document pdf = Document();
 
   pdf.addPage(MultiPage(
@@ -44,25 +63,25 @@ reportView(context) async {
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Text('Hospital Name', textScaleFactor: 2),
+                  Text(PrescriptionDetailsFromFirestore.hospitalName, textScaleFactor: 2),
                   PdfLogo()
                 ])),
         Paragraph(
-            text:'Patient name: Rachit Gupta'
+            text:'Patient name: ${PrescriptionDetailsFromFirestore.patientName}'
         ),
         Paragraph(
-            text:'Patient age: 21 years old'
+            text:'Patient age: ${PrescriptionDetailsFromFirestore.patientAge}'
         ),
         Paragraph(
-            text:'Patient gender: Male'
+            text:'Patient gender: ${PrescriptionDetailsFromFirestore.patientGender}'
         ),
         Paragraph(
-            text:'Problem: Concentration'
+            text:'Problem: ${PrescriptionDetailsFromFirestore.problem}'
         ),
         Header(level: 1, text: 'Description'),
         Paragraph(
             text:
-            'This guy has some serious problem of not being able to concentrate in his classes.'),
+            '${PrescriptionDetailsFromFirestore.description}'),
         Header(level: 1, text: 'Prescribed Medicines'),
         Paragraph(
             text:
@@ -85,16 +104,16 @@ reportView(context) async {
           color: PdfColors.grey
         ),
         Paragraph(
-            text:'Doctor name: Dr. Rachit Gupta'
+            text:'Doctor name: ${PrescriptionDetailsFromFirestore.doctorName}'
         ),
         Paragraph(
-            text:'Doctor Qualification: MBBS'
+            text:'Doctor Qualification: ${PrescriptionDetailsFromFirestore.doctorQualification}'
         ),
         Paragraph(
-            text:'Doctor phone number: +918114790969'
+            text:'Doctor phone number: ${PrescriptionDetailsFromFirestore.doctorPhoneNumber}'
         ),
         Paragraph(
-            text:'Hospital Address: IIT Guwahati'
+            text:'Hospital Address: ${PrescriptionDetailsFromFirestore.hospitalAddress}'
         ),
       ]));
   //save PDF
