@@ -4,6 +4,7 @@ import 'package:soochit/global/myDimens.dart';
 import 'package:soochit/pages/authentication/signout.dart';
 import 'package:soochit/pages/patient-specific/medicineDeadlines.dart';
 import 'package:soochit/pages/patient-specific/prescriptionHistory.dart';
+import 'package:soochit/widgets/addMedicineDialog.dart';
 
 class HomePatient extends StatefulWidget {
   static String id = "homePatient";
@@ -65,7 +66,14 @@ class _HomePatientState extends State<HomePatient> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(onPressed: () {}, backgroundColor: MyColors.primaryColor, child: Icon(Icons.add, size: 40),),
+      floatingActionButton: FloatingActionButton(onPressed: () {
+        showAddManualMedicineReminderDialog();
+      }, backgroundColor: MyColors.primaryColor, child: Icon(Icons.add, size: 40),),
     );
+  }
+  Future<Dialog> showAddManualMedicineReminderDialog() {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) => AddMedicineDialog());
   }
 }
