@@ -21,6 +21,10 @@ dependencies:
   provider: ^4.0.4
   cloud_firestore: ^0.13.6
   firebase_storage: ^3.0.6
+  flutter_local_notifications: ^1.4.4+1
+  rxdart: ^0.24.1
+  path_provider: ^1.6.11
+  http: ^0.12.1
 
 dev_dependencies:
   flutter_test:

@@ -10,6 +10,7 @@ import 'package:soochit/pages/doctor-specific/prescription.dart';
 import 'package:soochit/pages/patient-specific/homePatient.dart';
 import 'package:soochit/pages/patient-specific/patientRegistration.dart';
 import 'package:soochit/stores/login_store.dart';
+import 'functions/localNotificationsScreen.dart';
 import 'pages/welcome.dart';
 import 'pages/login.dart';
 import 'pages/doctor-specific/patientHistory.dart';
@@ -49,6 +50,7 @@ class _MyAppState extends State<MyApp> {
         child: MaterialApp(
           title: 'Soochit',
           debugShowCheckedModeBanner: false,
+          // home: LocalNotificationScreen(),
           home: SplashScreen(),
           routes: {
             EnterOTP.id: (context) => EnterOTP(),
